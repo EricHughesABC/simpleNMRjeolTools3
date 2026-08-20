@@ -1,0 +1,16 @@
+# Core dependencies
+requests>=2.31.0
+h5py>=3.10.0
+numpy>=1.24.0
+pandas>=2.0.0
+fire>=0.5.0
+
+# Qt framework (qtpy wrapper + backend)
+qtpy>=2.4.0
+PyQt5>=5.15.0
+
+# RDKit for chemistry/molecule handling
+# Note: RDKit can be tricky to install via pip on some systems.
+# If pip installation fails, consider using conda:
+# conda install -c conda-forge rdkit
+rdkit>=2023.9.1
