@@ -1,0 +1,2055 @@
+{
+  "nodes_orig": [
+    {
+      "ppm_calculated": 197.2,
+      "id": 0,
+      "atomNumber": 1,
+      "numProtons": 0,
+      "x": 0.7971463972550517,
+      "y": 0.630666069386199,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 198.26748958930173,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": ""
+    },
+    {
+      "ppm_calculated": 148.25,
+      "id": 1,
+      "atomNumber": 2,
+      "numProtons": 1,
+      "x": 0.49999428135722457,
+      "y": 0.630666069386199,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 148.9970298427109,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        6.592842210345895
+      ]
+    },
+    {
+      "ppm_calculated": 132.45,
+      "id": 2,
+      "atomNumber": 3,
+      "numProtons": 1,
+      "x": 0.6485760579489136,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 132.2842971161677,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        6.028161762607363
+      ]
+    },
+    {
+      "ppm_calculated": 132.05,
+      "id": 3,
+      "atomNumber": 4,
+      "numProtons": 0,
+      "x": 0.3514239420510866,
+      "y": 0.201767861227602,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 131.95524950954623,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": ""
+    },
+    {
+      "ppm_calculated": 122.53,
+      "id": 4,
+      "atomNumber": 5,
+      "numProtons": 1,
+      "x": 0.20285360274494862,
+      "y": 0.05880179184140303,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 122.61579115438111,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        5.477283531457159
+      ]
+    },
+    {
+      "ppm_calculated": 54.25,
+      "id": 5,
+      "atomNumber": 6,
+      "numProtons": 1,
+      "x": 0.3514239420510866,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 54.26874036655684,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        2.260644679114706
+      ]
+    },
+    {
+      "ppm_calculated": 32.4,
+      "id": 6,
+      "atomNumber": "7",
+      "numProtons": 0,
+      "x": 0.20285360274494862,
+      "y": 0.630666069386199,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": -1000000,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": false,
+      "symbol": "C",
+      "iupacLabel": ""
+    },
+    {
+      "ppm_calculated": 30.63,
+      "id": 7,
+      "atomNumber": 8,
+      "numProtons": 2,
+      "x": 0.05427182615325973,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 31.181861798915648,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        1.4398088088720442,
+        1.2024880687593686
+      ]
+    },
+    {
+      "ppm_calculated": 27.08,
+      "id": 8,
+      "atomNumber": 9,
+      "numProtons": 3,
+      "x": 0.3131204727411362,
+      "y": 0.8497091498284406,
+      "sym_atom_idx": "10",
+      "sym_atomNumber": "11",
+      "ppm": 26.749368933554308,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        0.9075206344385425
+      ]
+    },
+    {
+      "ppm_calculated": 27.15,
+      "id": 9,
+      "atomNumber": "10",
+      "numProtons": 3,
+      "x": 0.9457281738467402,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 26.894295290335208,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        2.229941872722076
+      ]
+    },
+    {
+      "ppm_calculated": 27.08,
+      "id": 10,
+      "atomNumber": "11",
+      "numProtons": 3,
+      "x": 0.09257529546321018,
+      "y": 0.8497091498284406,
+      "sym_atom_idx": "8",
+      "sym_atomNumber": "9",
+      "ppm": 27.77890692121025,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        0.8327910702915897
+      ]
+    },
+    {
+      "ppm_calculated": 23.02,
+      "id": 11,
+      "atomNumber": 12,
+      "numProtons": 2,
+      "x": 0.05427182615325973,
+      "y": 0.201767861227602,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 22.970412179118284,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        2.0257646924308537
+      ]
+    },
+    {
+      "ppm_calculated": 22.7,
+      "id": 12,
+      "atomNumber": 13,
+      "numProtons": 3,
+      "x": 0.49999428135722457,
+      "y": 0.05880179184140303,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 22.735368645249764,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        1.542881366766383
+      ]
+    }
+  ],
+  "nodes_now": [
+    {
+      "ppm_calculated": 197.2,
+      "id": 0,
+      "atomNumber": 1,
+      "numProtons": 0,
+      "x": 0.7971463972550517,
+      "y": 0.630666069386199,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 198.26748958930173,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": ""
+    },
+    {
+      "ppm_calculated": 148.25,
+      "id": 1,
+      "atomNumber": 2,
+      "numProtons": 1,
+      "x": 0.49999428135722457,
+      "y": 0.630666069386199,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 148.9970298427109,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        6.592842210345895
+      ]
+    },
+    {
+      "ppm_calculated": 132.45,
+      "id": 2,
+      "atomNumber": 3,
+      "numProtons": 1,
+      "x": 0.6485760579489136,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 132.2842971161677,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        6.028161762607363
+      ]
+    },
+    {
+      "ppm_calculated": 132.05,
+      "id": 3,
+      "atomNumber": 4,
+      "numProtons": 0,
+      "x": 0.3514239420510866,
+      "y": 0.201767861227602,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 131.95524950954623,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": ""
+    },
+    {
+      "ppm_calculated": 122.53,
+      "id": 4,
+      "atomNumber": 5,
+      "numProtons": 1,
+      "x": 0.20285360274494862,
+      "y": 0.05880179184140303,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 122.61579115438111,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        5.477283531457159
+      ]
+    },
+    {
+      "ppm_calculated": 54.25,
+      "id": 5,
+      "atomNumber": 6,
+      "numProtons": 1,
+      "x": 0.3514239420510866,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 54.26874036655684,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        2.260644679114706
+      ]
+    },
+    {
+      "ppm_calculated": 30.63,
+      "id": 7,
+      "atomNumber": 8,
+      "numProtons": 2,
+      "x": 0.05427182615325973,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 31.181861798915648,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        1.4398088088720442,
+        1.2024880687593686
+      ]
+    },
+    {
+      "ppm_calculated": 27.08,
+      "id": 8,
+      "atomNumber": 9,
+      "numProtons": 3,
+      "x": 0.3131204727411362,
+      "y": 0.8497091498284406,
+      "sym_atom_idx": "10",
+      "sym_atomNumber": "11",
+      "ppm": 26.749368933554308,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        0.9075206344385425
+      ]
+    },
+    {
+      "ppm_calculated": 27.15,
+      "id": 9,
+      "atomNumber": "10",
+      "numProtons": 3,
+      "x": 0.9457281738467402,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 26.894295290335208,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        2.229941872722076
+      ]
+    },
+    {
+      "ppm_calculated": 27.08,
+      "id": 10,
+      "atomNumber": "11",
+      "numProtons": 3,
+      "x": 0.09257529546321018,
+      "y": 0.8497091498284406,
+      "sym_atom_idx": "8",
+      "sym_atomNumber": "9",
+      "ppm": 27.77890692121025,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        0.8327910702915897
+      ]
+    },
+    {
+      "ppm_calculated": 23.02,
+      "id": 11,
+      "atomNumber": 12,
+      "numProtons": 2,
+      "x": 0.05427182615325973,
+      "y": 0.201767861227602,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 22.970412179118284,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        2.0257646924308537
+      ]
+    },
+    {
+      "ppm_calculated": 22.7,
+      "id": 12,
+      "atomNumber": 13,
+      "numProtons": 3,
+      "x": 0.49999428135722457,
+      "y": 0.05880179184140303,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 22.735368645249764,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        1.542881366766383
+      ]
+    }
+  ],
+  "links": [
+    {
+      "weight": 1,
+      "hmbc": true,
+      "source": 0,
+      "target": 1
+    },
+    {
+      "cosy": true,
+      "source": 1,
+      "target": 5,
+      "weight": 1
+    },
+    {
+      "cosy": true,
+      "source": 1,
+      "target": 2,
+      "weight": 1
+    },
+    {
+      "weight": 1,
+      "hmbc": true,
+      "source": 1,
+      "target": 3
+    },
+    {
+      "cosy": true,
+      "source": 4,
+      "target": 11,
+      "weight": 1
+    },
+    {
+      "cosy": true,
+      "source": 4,
+      "target": 12,
+      "weight": 1
+    },
+    {
+      "cosy": true,
+      "source": 7,
+      "target": 11,
+      "weight": 1
+    },
+    {
+      "cosy": true,
+      "source": 10,
+      "target": 8,
+      "weight": 1
+    }
+  ],
+  "smilesString": "CC(=O)/C=C/C1C(C)=CCCC1(C)C",
+  "molfile": "\n  CDK    10/13/08,15:9\n\n 14 14  0  0  0  0  0  0  0  0999 V2000\n    3.8971   -0.7500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.2990   -0.7500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    2.5981   -0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000    1.5000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2990    2.2500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2990   -0.7500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.5981   -0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.3349   -1.8991    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.1962   -0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.2632   -1.8991    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.5981    1.5000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.2990    2.2500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    3.8971   -2.2500    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n 11  7  1  0  0  0  0 \n  9  7  1  0  0  0  0 \n  7  8  1  0  0  0  0 \n  7  6  1  0  0  0  0 \n  8 12  1  0  0  0  0 \n 13  4  1  0  0  0  0 \n  6  2  1  0  0  0  0 \n  6  4  1  0  0  0  0 \n  5  4  2  0  0  0  0 \n  5 12  1  0  0  0  0 \n  2  3  2  0  0  0  0 \n 10  1  1  0  0  0  0 \n  3  1  1  0  0  0  0 \n  1 14  2  0  0  0  0 \nM  END\n$$$$\n",
+  "dataFrom": "nmrshiftdb2",
+  "oldjsondata": {
+    "smiles": {
+      "datatype": "smiles",
+      "count": 1,
+      "data": {
+        "0": "CC(=O)/C=C/C1C(C)=CCCC1(C)C"
+      }
+    },
+    "molfile": {
+      "datatype": "molfile",
+      "count": 1,
+      "data": {
+        "0": "\n  CDK    10/13/08,15:9\n\n 14 14  0  0  0  0  0  0  0  0999 V2000\n    3.8971   -0.7500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.2990   -0.7500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    2.5981   -0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000    1.5000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2990    2.2500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2990   -0.7500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.5981   -0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.3349   -1.8991    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.1962   -0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.2632   -1.8991    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.5981    1.5000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.2990    2.2500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    3.8971   -2.2500    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n 11  7  1  0  0  0  0 \n  9  7  1  0  0  0  0 \n  7  8  1  0  0  0  0 \n  7  6  1  0  0  0  0 \n  8 12  1  0  0  0  0 \n 13  4  1  0  0  0  0 \n  6  2  1  0  0  0  0 \n  6  4  1  0  0  0  0 \n  5  4  2  0  0  0  0 \n  5 12  1  0  0  0  0 \n  2  3  2  0  0  0  0 \n 10  1  1  0  0  0  0 \n  3  1  1  0  0  0  0 \n  1 14  2  0  0  0  0 \nM  END\n$$$$\n"
+      }
+    },
+    "hostname": {
+      "datatype": "hostname",
+      "count": 1,
+      "data": {
+        "0": "0x624bb2cbbfd1"
+      }
+    },
+    "workingDirectory": {
+      "datatype": "workingDirectory",
+      "count": 1,
+      "data": {
+        "0": "/opt/topspin4.5.0/examdata/exam_CMCse_1"
+      }
+    },
+    "workingFilename": {
+      "datatype": "workingFilename",
+      "count": 1,
+      "data": {
+        "0": "exam_CMCse_1"
+      }
+    },
+    "allAtomsInfo": {
+      "datatype": "allAtomsInfo",
+      "data": {
+        "0": {
+          "atom_idx": 0,
+          "id": 0,
+          "atomNumber": "1",
+          "symbol": "C",
+          "numProtons": 0
+        },
+        "1": {
+          "atom_idx": 1,
+          "id": 1,
+          "atomNumber": "2",
+          "symbol": "C",
+          "numProtons": 1
+        },
+        "2": {
+          "atom_idx": 2,
+          "id": 2,
+          "atomNumber": "3",
+          "symbol": "C",
+          "numProtons": 1
+        },
+        "3": {
+          "atom_idx": 3,
+          "id": 3,
+          "atomNumber": "4",
+          "symbol": "C",
+          "numProtons": 0
+        },
+        "4": {
+          "atom_idx": 4,
+          "id": 4,
+          "atomNumber": "5",
+          "symbol": "C",
+          "numProtons": 1
+        },
+        "5": {
+          "atom_idx": 5,
+          "id": 5,
+          "atomNumber": "6",
+          "symbol": "C",
+          "numProtons": 1
+        },
+        "6": {
+          "atom_idx": 6,
+          "id": 6,
+          "atomNumber": "7",
+          "symbol": "C",
+          "numProtons": 0
+        },
+        "7": {
+          "atom_idx": 7,
+          "id": 7,
+          "atomNumber": "8",
+          "symbol": "C",
+          "numProtons": 2
+        },
+        "8": {
+          "atom_idx": 8,
+          "id": 8,
+          "atomNumber": "9",
+          "symbol": "C",
+          "numProtons": 3
+        },
+        "9": {
+          "atom_idx": 9,
+          "id": 9,
+          "atomNumber": "10",
+          "symbol": "C",
+          "numProtons": 3
+        },
+        "10": {
+          "atom_idx": 10,
+          "id": 10,
+          "atomNumber": "11",
+          "symbol": "C",
+          "numProtons": 3
+        },
+        "11": {
+          "atom_idx": 11,
+          "id": 11,
+          "atomNumber": "12",
+          "symbol": "C",
+          "numProtons": 2
+        },
+        "12": {
+          "atom_idx": 12,
+          "id": 12,
+          "atomNumber": "13",
+          "symbol": "C",
+          "numProtons": 3
+        },
+        "13": {
+          "atom_idx": 13,
+          "id": 13,
+          "atomNumber": "14",
+          "symbol": "O",
+          "numProtons": 0
+        }
+      },
+      "count": 14
+    },
+    "carbonAtomsInfo": {
+      "datatype": "carbonAtomsInfo",
+      "data": {
+        "0": {
+          "atom_idx": 0,
+          "id": 0,
+          "atomNumber": "1",
+          "symbol": "C",
+          "numProtons": 0
+        },
+        "1": {
+          "atom_idx": 1,
+          "id": 1,
+          "atomNumber": "2",
+          "symbol": "C",
+          "numProtons": 1
+        },
+        "2": {
+          "atom_idx": 2,
+          "id": 2,
+          "atomNumber": "3",
+          "symbol": "C",
+          "numProtons": 1
+        },
+        "3": {
+          "atom_idx": 3,
+          "id": 3,
+          "atomNumber": "4",
+          "symbol": "C",
+          "numProtons": 0
+        },
+        "4": {
+          "atom_idx": 4,
+          "id": 4,
+          "atomNumber": "5",
+          "symbol": "C",
+          "numProtons": 1
+        },
+        "5": {
+          "atom_idx": 5,
+          "id": 5,
+          "atomNumber": "6",
+          "symbol": "C",
+          "numProtons": 1
+        },
+        "6": {
+          "atom_idx": 6,
+          "id": 6,
+          "atomNumber": "7",
+          "symbol": "C",
+          "numProtons": 0
+        },
+        "7": {
+          "atom_idx": 7,
+          "id": 7,
+          "atomNumber": "8",
+          "symbol": "C",
+          "numProtons": 2
+        },
+        "8": {
+          "atom_idx": 8,
+          "id": 8,
+          "atomNumber": "9",
+          "symbol": "C",
+          "numProtons": 3
+        },
+        "9": {
+          "atom_idx": 9,
+          "id": 9,
+          "atomNumber": "10",
+          "symbol": "C",
+          "numProtons": 3
+        },
+        "10": {
+          "atom_idx": 10,
+          "id": 10,
+          "atomNumber": "11",
+          "symbol": "C",
+          "numProtons": 3
+        },
+        "11": {
+          "atom_idx": 11,
+          "id": 11,
+          "atomNumber": "12",
+          "symbol": "C",
+          "numProtons": 2
+        },
+        "12": {
+          "atom_idx": 12,
+          "id": 12,
+          "atomNumber": "13",
+          "symbol": "C",
+          "numProtons": 3
+        }
+      },
+      "count": 13
+    },
+    "nmrAssignments": {
+      "datatype": "nmrAssignments",
+      "count": 0,
+      "data": {}
+    },
+    "c13predictions": {
+      "datatype": "c13predictions",
+      "count": 0,
+      "data": {}
+    },
+    "HMBC_0": {
+      "datatype": "nmrspectrum",
+      "origin": "Bruker XWIN-NMR",
+      "type": "2D",
+      "subtype": "13C1H, HMBC",
+      "experimenttype": "2D-HMBC",
+      "experiment": "HMBC",
+      "class": "",
+      "spectype": "",
+      "pulsesequence": "hmbcetgpl3nd",
+      "intrument": "Avance",
+      "probe": "36",
+      "datafilename": "/opt/topspin4.5.0/examdata/exam_CMCse_1/4",
+      "nucleus": "['1H', '13C']",
+      "specfrequency": "[100.612769, 400.13]",
+      "temperature": "300",
+      "peaks": {
+        "datatype": "peaks",
+        "data": {
+          "0": {
+            "intensity": 92001.5,
+            "type": 0,
+            "annotation": "",
+            "delta1": 131.95524950954623,
+            "delta2": 6.596791620120233
+          },
+          "1": {
+            "intensity": 1657154.8125,
+            "type": 0,
+            "annotation": "",
+            "delta1": 198.26748958930173,
+            "delta2": 6.594738664705815
+          }
+        },
+        "count": 2
+      },
+      "integrals": {
+        "datatype": "integrals",
+        "count": 0,
+        "normValue": 1,
+        "data": {}
+      },
+      "multiplets": {
+        "datatype": "multiplets",
+        "normValue": 1,
+        "data": {},
+        "count": 0
+      },
+      "filename": "HMBC_0"
+    },
+    "HSQC_0": {
+      "datatype": "nmrspectrum",
+      "origin": "Bruker XWIN-NMR",
+      "type": "2D",
+      "subtype": "13C1H, HSQC-EDITED",
+      "experimenttype": "2D-HSQC",
+      "experiment": "HSQC",
+      "class": "",
+      "spectype": "",
+      "pulsesequence": "hsqcedetgpsp.3",
+      "intrument": "Avance",
+      "probe": "36",
+      "datafilename": "/opt/topspin4.5.0/examdata/exam_CMCse_1/3",
+      "nucleus": "['1H', '13C']",
+      "specfrequency": "[100.612769, 400.13]",
+      "temperature": "300",
+      "peaks": {
+        "datatype": "peaks",
+        "data": {
+          "0": {
+            "intensity": 11035963.18801117,
+            "type": 0,
+            "annotation": "",
+            "delta1": 148.9970298427109,
+            "delta2": 6.592842210345895
+          },
+          "1": {
+            "intensity": 10456747.109222412,
+            "type": 0,
+            "annotation": "",
+            "delta1": 132.2842971161677,
+            "delta2": 6.028161762607363
+          },
+          "2": {
+            "intensity": 12651580.113342285,
+            "type": 0,
+            "annotation": "",
+            "delta1": 122.61579115438111,
+            "delta2": 5.477283531457159
+          },
+          "3": {
+            "intensity": 14011700.53125,
+            "type": 0,
+            "annotation": "",
+            "delta1": 54.26874036655684,
+            "delta2": 2.260644679114706
+          },
+          "4": {
+            "intensity": 34334443.01953125,
+            "type": 0,
+            "annotation": "",
+            "delta1": 26.894295290335208,
+            "delta2": 2.229941872722076
+          },
+          "5": {
+            "intensity": -35192810.1875,
+            "type": 0,
+            "annotation": "",
+            "delta1": 22.970412179118284,
+            "delta2": 2.0257646924308537
+          },
+          "6": {
+            "intensity": 41024930.052734375,
+            "type": 0,
+            "annotation": "",
+            "delta1": 22.735368645249764,
+            "delta2": 1.542881366766383
+          },
+          "7": {
+            "intensity": -12615218.855957031,
+            "type": 0,
+            "annotation": "",
+            "delta1": 31.179587696875032,
+            "delta2": 1.4398088088720442
+          },
+          "8": {
+            "intensity": -14573264.498046875,
+            "type": 0,
+            "annotation": "",
+            "delta1": 31.184135900956264,
+            "delta2": 1.2024880687593686
+          },
+          "9": {
+            "intensity": 54424082.9921875,
+            "type": 0,
+            "annotation": "",
+            "delta1": 26.749368933554308,
+            "delta2": 0.9075206344385425
+          },
+          "10": {
+            "intensity": 57782469.375,
+            "type": 0,
+            "annotation": "",
+            "delta1": 27.77890692121025,
+            "delta2": 0.8327910702915897
+          }
+        },
+        "count": 11
+      },
+      "integrals": {
+        "datatype": "integrals",
+        "count": 0,
+        "normValue": 1,
+        "data": {}
+      },
+      "multiplets": {
+        "datatype": "multiplets",
+        "normValue": 1,
+        "data": {},
+        "count": 0
+      },
+      "filename": "HSQC_0"
+    },
+    "COSY_0": {
+      "datatype": "nmrspectrum",
+      "origin": "Bruker XWIN-NMR",
+      "type": "2D",
+      "subtype": "1H1H, COSY",
+      "experimenttype": "2D-COSY",
+      "experiment": "COSY",
+      "class": "",
+      "spectype": "",
+      "pulsesequence": "cosygpmfqf",
+      "intrument": "Avance",
+      "probe": "36",
+      "datafilename": "/opt/topspin4.5.0/examdata/exam_CMCse_1/2",
+      "nucleus": "['1H', '1H']",
+      "specfrequency": "[400.13, 400.13]",
+      "temperature": "300",
+      "peaks": {
+        "datatype": "peaks",
+        "data": {
+          "0": {
+            "intensity": 5699691.0625,
+            "type": 0,
+            "annotation": "",
+            "delta1": 2.266098725974011,
+            "delta2": 6.59537413058546
+          },
+          "1": {
+            "intensity": 4163330.1875,
+            "type": 0,
+            "annotation": "",
+            "delta1": 6.039245222555125,
+            "delta2": 6.59395942141974
+          },
+          "2": {
+            "intensity": 1649880.625,
+            "type": 0,
+            "annotation": "",
+            "delta1": 6.595636942265821,
+            "delta2": 2.263534665151595
+          },
+          "3": {
+            "intensity": 446594.3125,
+            "type": 0,
+            "annotation": "",
+            "delta1": 5.482853502844437,
+            "delta2": 2.0272782344763973
+          },
+          "4": {
+            "intensity": 3852494.125,
+            "type": 0,
+            "annotation": "",
+            "delta1": 5.490222929595571,
+            "delta2": 1.5434476998002438
+          },
+          "5": {
+            "intensity": 3054320.1875,
+            "type": 0,
+            "annotation": "",
+            "delta1": 2.0216883040344693,
+            "delta2": 1.4409270001059828
+          },
+          "6": {
+            "intensity": 3782778.875,
+            "type": 0,
+            "annotation": "",
+            "delta1": 0.8353040792410356,
+            "delta2": 0.9080792033062975
+          }
+        },
+        "count": 7
+      },
+      "integrals": {
+        "datatype": "integrals",
+        "count": 0,
+        "normValue": 1,
+        "data": {}
+      },
+      "multiplets": {
+        "datatype": "multiplets",
+        "normValue": 1,
+        "data": {},
+        "count": 0
+      },
+      "filename": "COSY_0"
+    },
+    "chosenSpectra": {
+      "datatype": "chosenSpectra",
+      "count": 3,
+      "data": {
+        "0": "[1H, 13C] 2D hmbcetgpl3nd HMBC_0 HMBC",
+        "1": "[1H, 13C] 2D hsqcedetgpsp.3 HSQC_0 HSQC",
+        "2": "[1H, 1H] 2D cosygpmfqf COSY_0 COSY"
+      }
+    },
+    "exptIdentifiers": {
+      "count": 6,
+      "datatype": "exptIdentifiers",
+      "data": {
+        "0": "Unknown",
+        "1": "H1_1D",
+        "2": "HMBC",
+        "3": "HSQC",
+        "4": "COSY",
+        "5": "C13_1D"
+      }
+    },
+    "spectraWithPeaks": {
+      "datatype": "spectraWithPeaks",
+      "count": 5,
+      "data": {
+        "0": "1H 1D zg 1.fid_0",
+        "1": "[1H, 13C] HMBC hmbcetgpl3nd 4.ser_0",
+        "2": "[1H, 13C] HSQC hsqcedetgpsp.3 3.ser_0",
+        "3": "[1H, 1H] COSY cosygpmfqf 2.ser_0",
+        "4": "13C 1D zgpg30 5.fid_0"
+      }
+    },
+    "carbonCalcPositionsMethod": {
+      "datatype": "carbonCalcPositionsMethod",
+      "count": 1,
+      "data": {
+        "0": "Calculated Positions"
+      }
+    },
+    "MNOVAcalcMethod": {
+      "datatype": "MNOVAcalcMethod",
+      "count": 1,
+      "data": {
+        "0": "NMRSHIFTDB2 Predict"
+      }
+    },
+    "randomizeStart": {
+      "datatype": "randomizeStart",
+      "count": 1,
+      "data": {
+        "0": false
+      }
+    },
+    "startingTemperature": {
+      "datatype": "startingTemperature",
+      "count": 1,
+      "data": {
+        "0": 1000
+      }
+    },
+    "endingTemperature": {
+      "datatype": "endingTemperature",
+      "count": 1,
+      "data": {
+        "0": 0.1
+      }
+    },
+    "coolingRate": {
+      "datatype": "coolingRate",
+      "count": 1,
+      "data": {
+        "0": 0.999
+      }
+    },
+    "numberOfSteps": {
+      "datatype": "numberOfSteps",
+      "count": 1,
+      "data": {
+        "0": 10000
+      }
+    },
+    "ppmGroupSeparation": {
+      "datatype": "ppmGroupSeparation",
+      "count": 1,
+      "data": {
+        "0": 2
+      }
+    },
+    "ml_consent": {
+      "datatype": "ml_consent",
+      "count": 1,
+      "data": {
+        "0": false
+      }
+    },
+    "simulatedAnnealing": {
+      "datatype": "simulatedAnnealing",
+      "count": 1,
+      "data": {
+        "0": true
+      }
+    }
+  },
+  "molgraph": {
+    "directed": false,
+    "multigraph": false,
+    "graph": {},
+    "nodes": [
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 0,
+        "id0": 0,
+        "x": 0.7971463972550517,
+        "y": 0.630666069386199,
+        "ppm": 198.26748958930173,
+        "atomNumber": 1,
+        "id": 0
+      },
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 1,
+        "id0": 1,
+        "x": 0.49999428135722457,
+        "y": 0.630666069386199,
+        "ppm": 148.9970298427109,
+        "atomNumber": 2,
+        "id": 1
+      },
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 1,
+        "id0": 2,
+        "x": 0.6485760579489136,
+        "y": 0.4877,
+        "ppm": 132.2842971161677,
+        "atomNumber": 3,
+        "id": 2
+      },
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 0,
+        "id0": 3,
+        "x": 0.3514239420510866,
+        "y": 0.201767861227602,
+        "ppm": 131.95524950954623,
+        "atomNumber": 4,
+        "id": 3
+      },
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 1,
+        "id0": 4,
+        "x": 0.20285360274494862,
+        "y": 0.05880179184140303,
+        "ppm": 122.61579115438111,
+        "atomNumber": 5,
+        "id": 4
+      },
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 1,
+        "id0": 5,
+        "x": 0.3514239420510866,
+        "y": 0.4877,
+        "ppm": 54.26874036655684,
+        "atomNumber": 6,
+        "id": 5
+      },
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 0,
+        "id0": 6,
+        "x": 0.20285360274494862,
+        "y": 0.630666069386199,
+        "ppm": 10000,
+        "id": 6
+      },
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 2,
+        "id0": 7,
+        "x": 0.05427182615325973,
+        "y": 0.4877,
+        "ppm": 31.181861798915648,
+        "atomNumber": 8,
+        "id": 7
+      },
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 3,
+        "id0": 8,
+        "x": 0.3131204727411362,
+        "y": 0.8497091498284406,
+        "ppm": 26.749368933554308,
+        "atomNumber": 9,
+        "id": 8
+      },
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 3,
+        "id0": 9,
+        "x": 0.9457281738467402,
+        "y": 0.4877,
+        "ppm": 27.77890692121025,
+        "atomNumber": 10,
+        "id": 9
+      },
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 3,
+        "id0": 10,
+        "x": 0.09257529546321018,
+        "y": 0.8497091498284406,
+        "ppm": 26.894295290335208,
+        "atomNumber": 11,
+        "id": 10
+      },
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 2,
+        "id0": 11,
+        "x": 0.05427182615325973,
+        "y": 0.201767861227602,
+        "ppm": 22.970412179118284,
+        "atomNumber": 12,
+        "id": 11
+      },
+      {
+        "symbol": "C",
+        "atom_number": 6,
+        "numProtons": 3,
+        "id0": 12,
+        "x": 0.49999428135722457,
+        "y": 0.05880179184140303,
+        "ppm": 22.735368645249764,
+        "atomNumber": 13,
+        "id": 12
+      },
+      {
+        "symbol": "O",
+        "atom_number": 8,
+        "numProtons": 0,
+        "id0": 13,
+        "x": 0.7971463972550517,
+        "y": 0.9165982081585969,
+        "ppm": 10000,
+        "id": 13
+      }
+    ],
+    "links": [
+      {
+        "source": 0,
+        "target": 9
+      },
+      {
+        "source": 0,
+        "target": 2
+      },
+      {
+        "source": 0,
+        "target": 13
+      },
+      {
+        "source": 1,
+        "target": 5
+      },
+      {
+        "source": 1,
+        "target": 2
+      },
+      {
+        "source": 3,
+        "target": 12
+      },
+      {
+        "source": 3,
+        "target": 5
+      },
+      {
+        "source": 3,
+        "target": 4
+      },
+      {
+        "source": 4,
+        "target": 11
+      },
+      {
+        "source": 5,
+        "target": 6
+      },
+      {
+        "source": 6,
+        "target": 10
+      },
+      {
+        "source": 6,
+        "target": 8
+      },
+      {
+        "source": 6,
+        "target": 7
+      },
+      {
+        "source": 7,
+        "target": 11
+      }
+    ]
+  },
+  "shortest_paths": {
+    "0": {
+      "0": 0,
+      "1": 2,
+      "2": 1,
+      "3": 4,
+      "4": 5,
+      "5": 3,
+      "6": 4,
+      "7": 5,
+      "8": 5,
+      "9": 1,
+      "10": 5,
+      "11": 6,
+      "12": 5,
+      "13": 1
+    },
+    "1": {
+      "0": 2,
+      "1": 0,
+      "2": 1,
+      "3": 2,
+      "4": 3,
+      "5": 1,
+      "6": 2,
+      "7": 3,
+      "8": 3,
+      "9": 3,
+      "10": 3,
+      "11": 4,
+      "12": 3,
+      "13": 3
+    },
+    "2": {
+      "0": 1,
+      "1": 1,
+      "2": 0,
+      "3": 3,
+      "4": 4,
+      "5": 2,
+      "6": 3,
+      "7": 4,
+      "8": 4,
+      "9": 2,
+      "10": 4,
+      "11": 5,
+      "12": 4,
+      "13": 2
+    },
+    "3": {
+      "0": 4,
+      "1": 2,
+      "2": 3,
+      "3": 0,
+      "4": 1,
+      "5": 1,
+      "6": 2,
+      "7": 3,
+      "8": 3,
+      "9": 5,
+      "10": 3,
+      "11": 2,
+      "12": 1,
+      "13": 5
+    },
+    "4": {
+      "0": 5,
+      "1": 3,
+      "2": 4,
+      "3": 1,
+      "4": 0,
+      "5": 2,
+      "6": 3,
+      "7": 2,
+      "8": 4,
+      "9": 6,
+      "10": 4,
+      "11": 1,
+      "12": 2,
+      "13": 6
+    },
+    "5": {
+      "0": 3,
+      "1": 1,
+      "2": 2,
+      "3": 1,
+      "4": 2,
+      "5": 0,
+      "6": 1,
+      "7": 2,
+      "8": 2,
+      "9": 4,
+      "10": 2,
+      "11": 3,
+      "12": 2,
+      "13": 4
+    },
+    "6": {
+      "0": 4,
+      "1": 2,
+      "2": 3,
+      "3": 2,
+      "4": 3,
+      "5": 1,
+      "6": 0,
+      "7": 1,
+      "8": 1,
+      "9": 5,
+      "10": 1,
+      "11": 2,
+      "12": 3,
+      "13": 5
+    },
+    "7": {
+      "0": 5,
+      "1": 3,
+      "2": 4,
+      "3": 3,
+      "4": 2,
+      "5": 2,
+      "6": 1,
+      "7": 0,
+      "8": 2,
+      "9": 6,
+      "10": 2,
+      "11": 1,
+      "12": 4,
+      "13": 6
+    },
+    "8": {
+      "0": 5,
+      "1": 3,
+      "2": 4,
+      "3": 3,
+      "4": 4,
+      "5": 2,
+      "6": 1,
+      "7": 2,
+      "8": 0,
+      "9": 6,
+      "10": 2,
+      "11": 3,
+      "12": 4,
+      "13": 6
+    },
+    "9": {
+      "0": 1,
+      "1": 3,
+      "2": 2,
+      "3": 5,
+      "4": 6,
+      "5": 4,
+      "6": 5,
+      "7": 6,
+      "8": 6,
+      "9": 0,
+      "10": 6,
+      "11": 7,
+      "12": 6,
+      "13": 2
+    },
+    "10": {
+      "0": 5,
+      "1": 3,
+      "2": 4,
+      "3": 3,
+      "4": 4,
+      "5": 2,
+      "6": 1,
+      "7": 2,
+      "8": 2,
+      "9": 6,
+      "10": 0,
+      "11": 3,
+      "12": 4,
+      "13": 6
+    },
+    "11": {
+      "0": 6,
+      "1": 4,
+      "2": 5,
+      "3": 2,
+      "4": 1,
+      "5": 3,
+      "6": 2,
+      "7": 1,
+      "8": 3,
+      "9": 7,
+      "10": 3,
+      "11": 0,
+      "12": 3,
+      "13": 7
+    },
+    "12": {
+      "0": 5,
+      "1": 3,
+      "2": 4,
+      "3": 1,
+      "4": 2,
+      "5": 2,
+      "6": 3,
+      "7": 4,
+      "8": 4,
+      "9": 6,
+      "10": 4,
+      "11": 3,
+      "12": 0,
+      "13": 6
+    },
+    "13": {
+      "0": 1,
+      "1": 3,
+      "2": 2,
+      "3": 5,
+      "4": 6,
+      "5": 4,
+      "6": 5,
+      "7": 6,
+      "8": 6,
+      "9": 2,
+      "10": 6,
+      "11": 7,
+      "12": 6,
+      "13": 0
+    }
+  },
+  "svg": "<?xml version='1.0' encoding='iso-8859-1'?>\n<svg class=\"center\" version='1.1' baseProfile='full'\n              xmlns='http://www.w3.org/2000/svg'\n                      xmlns:rdkit='http://www.rdkit.org/xml'\n                      xmlns:xlink='http://www.w3.org/1999/xlink'\n                  xml:space='preserve'\nwidth=1000 height=600 viewBox='0 0 1000 600'>\n<!-- END OF HEADER -->\n<g transform='translate(0, 0)'>\n<rect style='opacity:1.0;fill:none;stroke:none' width='1000.0' height='600.0' x='0.0' y='0.0'> </rect>\n<path class='bond-0 atom-10 atom-6' d='M 92.6,509.8 L 202.9,378.4' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-1 atom-8 atom-6' d='M 313.1,509.8 L 202.9,378.4' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-2 atom-6 atom-7' d='M 202.9,378.4 L 54.3,292.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-3 atom-6 atom-5' d='M 202.9,378.4 L 351.4,292.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-4 atom-7 atom-11' d='M 54.3,292.6 L 54.3,121.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-5 atom-12 atom-3' d='M 500.0,35.3 L 351.4,121.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-6 atom-5 atom-1' d='M 351.4,292.6 L 500.0,378.4' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-7 atom-5 atom-3' d='M 351.4,292.6 L 351.4,121.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-8 atom-4 atom-3' d='M 202.9,35.3 L 351.4,121.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-8 atom-4 atom-3' d='M 202.9,65.0 L 325.7,135.9' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-9 atom-4 atom-11' d='M 202.9,35.3 L 54.3,121.1' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-10 atom-1 atom-2' d='M 500.0,378.4 L 648.6,292.6' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-10 atom-1 atom-2' d='M 500.0,348.7 L 635.7,270.3' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-11 atom-9 atom-0' d='M 945.7,292.6 L 797.1,378.4' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-12 atom-2 atom-0' d='M 648.6,292.6 L 797.1,378.4' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-13 atom-0 atom-13' d='M 784.3,371.0 L 784.3,450.5' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-13 atom-0 atom-13' d='M 784.3,450.5 L 784.3,530.0' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-13 atom-0 atom-13' d='M 810.0,371.0 L 810.0,450.5' style='fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path class='bond-13 atom-0 atom-13' d='M 810.0,450.5 L 810.0,530.0' style='fill:none;fill-rule:evenodd;stroke:#FF0000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1' />\n<path d='M 804.6,374.1 L 797.1,378.4 L 789.7,374.1' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;' />\n<path d='M 492.6,374.1 L 500.0,378.4 L 507.4,374.1' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;' />\n<path d='M 641.1,296.9 L 648.6,292.6 L 656.0,296.9' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;' />\n<path d='M 210.3,39.6 L 202.9,35.3 L 195.4,39.6' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;' />\n<path d='M 61.7,296.9 L 54.3,292.6 L 54.3,284.0' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;' />\n<path d='M 54.3,129.6 L 54.3,121.1 L 61.7,116.8' style='fill:none;stroke:#000000;stroke-width:2.0px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;' />\n<path class='atom-13' d='M 784.1 550.0\nQ 784.1 543.2, 787.5 539.4\nQ 790.9 535.6, 797.1 535.6\nQ 803.4 535.6, 806.8 539.4\nQ 810.1 543.2, 810.1 550.0\nQ 810.1 556.9, 806.7 560.8\nQ 803.3 564.7, 797.1 564.7\nQ 790.9 564.7, 787.5 560.8\nQ 784.1 557.0, 784.1 550.0\nM 797.1 561.5\nQ 801.5 561.5, 803.8 558.6\nQ 806.1 555.7, 806.1 550.0\nQ 806.1 544.5, 803.8 541.7\nQ 801.5 538.8, 797.1 538.8\nQ 792.8 538.8, 790.5 541.6\nQ 788.1 544.4, 788.1 550.0\nQ 788.1 555.8, 790.5 558.6\nQ 792.8 561.5, 797.1 561.5\n' fill='#FF0000'/>\n<path  d='M 92.6,509.8 L 202.9,378.4' class='bond-selector bond-0 atom-10 atom-6' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 313.1,509.8 L 202.9,378.4' class='bond-selector bond-1 atom-8 atom-6' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 202.9,378.4 L 54.3,292.6' class='bond-selector bond-2 atom-6 atom-7' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 202.9,378.4 L 351.4,292.6' class='bond-selector bond-3 atom-6 atom-5' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 54.3,292.6 L 54.3,121.1' class='bond-selector bond-4 atom-7 atom-11' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 500.0,35.3 L 351.4,121.1' class='bond-selector bond-5 atom-12 atom-3' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 351.4,292.6 L 500.0,378.4' class='bond-selector bond-6 atom-5 atom-1' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 351.4,292.6 L 351.4,121.1' class='bond-selector bond-7 atom-5 atom-3' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 202.9,35.3 L 351.4,121.1' class='bond-selector bond-8 atom-4 atom-3' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 202.9,35.3 L 54.3,121.1' class='bond-selector bond-9 atom-4 atom-11' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 500.0,378.4 L 648.6,292.6' class='bond-selector bond-10 atom-1 atom-2' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 945.7,292.6 L 797.1,378.4' class='bond-selector bond-11 atom-9 atom-0' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 648.6,292.6 L 797.1,378.4' class='bond-selector bond-12 atom-2 atom-0' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<path  d='M 797.1,378.4 L 797.1,550.0' class='bond-selector bond-13 atom-0 atom-13' style='fill:#fff;stroke:#fff;stroke-width:4.0px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='797.1' cy='378.4' r='22.9' class='atom-selector atom-0' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='500.0' cy='378.4' r='22.9' class='atom-selector atom-1' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='648.6' cy='292.6' r='22.9' class='atom-selector atom-2' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='351.4' cy='121.1' r='22.9' class='atom-selector atom-3' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='202.9' cy='35.3' r='22.9' class='atom-selector atom-4' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='351.4' cy='292.6' r='22.9' class='atom-selector atom-5' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='202.9' cy='378.4' r='22.9' class='atom-selector atom-6' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='54.3' cy='292.6' r='22.9' class='atom-selector atom-7' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='313.1' cy='509.8' r='22.9' class='atom-selector atom-8' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='945.7' cy='292.6' r='22.9' class='atom-selector atom-9' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='92.6' cy='509.8' r='22.9' class='atom-selector atom-10' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='54.3' cy='121.1' r='22.9' class='atom-selector atom-11' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='500.0' cy='35.3' r='22.9' class='atom-selector atom-12' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n<circle  cx='797.1' cy='550.0' r='22.9' class='atom-selector atom-13' style='fill:#fff;stroke:#fff;stroke-width:1px;fill-opacity:0;stroke-opacity:0' />\n</g>\n</svg>\n",
+  "catoms": [
+    {
+      "ppm_calculated": 197.2,
+      "id": 0,
+      "atomNumber": 1,
+      "numProtons": 0,
+      "x": 0.7971463972550517,
+      "y": 0.630666069386199,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 198.26748958930173,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": ""
+    },
+    {
+      "ppm_calculated": 148.25,
+      "id": 1,
+      "atomNumber": 2,
+      "numProtons": 1,
+      "x": 0.49999428135722457,
+      "y": 0.630666069386199,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 148.9970298427109,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        6.592842210345895
+      ]
+    },
+    {
+      "ppm_calculated": 132.45,
+      "id": 2,
+      "atomNumber": 3,
+      "numProtons": 1,
+      "x": 0.6485760579489136,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 132.2842971161677,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        6.028161762607363
+      ]
+    },
+    {
+      "ppm_calculated": 132.05,
+      "id": 3,
+      "atomNumber": 4,
+      "numProtons": 0,
+      "x": 0.3514239420510866,
+      "y": 0.201767861227602,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 131.95524950954623,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": ""
+    },
+    {
+      "ppm_calculated": 122.53,
+      "id": 4,
+      "atomNumber": 5,
+      "numProtons": 1,
+      "x": 0.20285360274494862,
+      "y": 0.05880179184140303,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 122.61579115438111,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        5.477283531457159
+      ]
+    },
+    {
+      "ppm_calculated": 54.25,
+      "id": 5,
+      "atomNumber": 6,
+      "numProtons": 1,
+      "x": 0.3514239420510866,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 54.26874036655684,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        2.260644679114706
+      ]
+    },
+    {
+      "ppm_calculated": 32.4,
+      "id": 6,
+      "atomNumber": "7",
+      "numProtons": 0,
+      "x": 0.20285360274494862,
+      "y": 0.630666069386199,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": -1000000,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": false,
+      "symbol": "C",
+      "iupacLabel": ""
+    },
+    {
+      "ppm_calculated": 30.63,
+      "id": 7,
+      "atomNumber": 8,
+      "numProtons": 2,
+      "x": 0.05427182615325973,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 31.181861798915648,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        1.4398088088720442,
+        1.2024880687593686
+      ]
+    },
+    {
+      "ppm_calculated": 27.08,
+      "id": 8,
+      "atomNumber": 9,
+      "numProtons": 3,
+      "x": 0.3131204727411362,
+      "y": 0.8497091498284406,
+      "sym_atom_idx": "10",
+      "sym_atomNumber": "11",
+      "ppm": 26.749368933554308,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        0.9075206344385425
+      ]
+    },
+    {
+      "ppm_calculated": 27.15,
+      "id": 9,
+      "atomNumber": "10",
+      "numProtons": 3,
+      "x": 0.9457281738467402,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 26.894295290335208,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        2.229941872722076
+      ]
+    },
+    {
+      "ppm_calculated": 27.08,
+      "id": 10,
+      "atomNumber": "11",
+      "numProtons": 3,
+      "x": 0.09257529546321018,
+      "y": 0.8497091498284406,
+      "sym_atom_idx": "8",
+      "sym_atomNumber": "9",
+      "ppm": 27.77890692121025,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        0.8327910702915897
+      ]
+    },
+    {
+      "ppm_calculated": 23.02,
+      "id": 11,
+      "atomNumber": 12,
+      "numProtons": 2,
+      "x": 0.05427182615325973,
+      "y": 0.201767861227602,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 22.970412179118284,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        2.0257646924308537
+      ]
+    },
+    {
+      "ppm_calculated": 22.7,
+      "id": 12,
+      "atomNumber": 13,
+      "numProtons": 3,
+      "x": 0.49999428135722457,
+      "y": 0.05880179184140303,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 22.735368645249764,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        1.542881366766383
+      ]
+    }
+  ],
+  "catoms_orig": [
+    {
+      "ppm_calculated": 197.2,
+      "id": 0,
+      "atomNumber": 1,
+      "numProtons": 0,
+      "x": 0.7971463972550517,
+      "y": 0.630666069386199,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 198.26748958930173,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": ""
+    },
+    {
+      "ppm_calculated": 148.25,
+      "id": 1,
+      "atomNumber": 2,
+      "numProtons": 1,
+      "x": 0.49999428135722457,
+      "y": 0.630666069386199,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 148.9970298427109,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        6.592842210345895
+      ]
+    },
+    {
+      "ppm_calculated": 132.45,
+      "id": 2,
+      "atomNumber": 3,
+      "numProtons": 1,
+      "x": 0.6485760579489136,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 132.2842971161677,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        6.028161762607363
+      ]
+    },
+    {
+      "ppm_calculated": 132.05,
+      "id": 3,
+      "atomNumber": 4,
+      "numProtons": 0,
+      "x": 0.3514239420510866,
+      "y": 0.201767861227602,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 131.95524950954623,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": ""
+    },
+    {
+      "ppm_calculated": 122.53,
+      "id": 4,
+      "atomNumber": 5,
+      "numProtons": 1,
+      "x": 0.20285360274494862,
+      "y": 0.05880179184140303,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 122.61579115438111,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        5.477283531457159
+      ]
+    },
+    {
+      "ppm_calculated": 54.25,
+      "id": 5,
+      "atomNumber": 6,
+      "numProtons": 1,
+      "x": 0.3514239420510866,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 54.26874036655684,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        2.260644679114706
+      ]
+    },
+    {
+      "ppm_calculated": 32.4,
+      "id": 6,
+      "atomNumber": "7",
+      "numProtons": 0,
+      "x": 0.20285360274494862,
+      "y": 0.630666069386199,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": -1000000,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": false,
+      "symbol": "C",
+      "iupacLabel": ""
+    },
+    {
+      "ppm_calculated": 30.63,
+      "id": 7,
+      "atomNumber": 8,
+      "numProtons": 2,
+      "x": 0.05427182615325973,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 31.181861798915648,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        1.4398088088720442,
+        1.2024880687593686
+      ]
+    },
+    {
+      "ppm_calculated": 27.08,
+      "id": 8,
+      "atomNumber": 9,
+      "numProtons": 3,
+      "x": 0.3131204727411362,
+      "y": 0.8497091498284406,
+      "sym_atom_idx": "10",
+      "sym_atomNumber": "11",
+      "ppm": 26.749368933554308,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        0.9075206344385425
+      ]
+    },
+    {
+      "ppm_calculated": 27.15,
+      "id": 9,
+      "atomNumber": "10",
+      "numProtons": 3,
+      "x": 0.9457281738467402,
+      "y": 0.4877,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 26.894295290335208,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        2.229941872722076
+      ]
+    },
+    {
+      "ppm_calculated": 27.08,
+      "id": 10,
+      "atomNumber": "11",
+      "numProtons": 3,
+      "x": 0.09257529546321018,
+      "y": 0.8497091498284406,
+      "sym_atom_idx": "8",
+      "sym_atomNumber": "9",
+      "ppm": 27.77890692121025,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        0.8327910702915897
+      ]
+    },
+    {
+      "ppm_calculated": 23.02,
+      "id": 11,
+      "atomNumber": 12,
+      "numProtons": 2,
+      "x": 0.05427182615325973,
+      "y": 0.201767861227602,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 22.970412179118284,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        2.0257646924308537
+      ]
+    },
+    {
+      "ppm_calculated": 22.7,
+      "id": 12,
+      "atomNumber": 13,
+      "numProtons": 3,
+      "x": 0.49999428135722457,
+      "y": 0.05880179184140303,
+      "sym_atom_idx": "",
+      "sym_atomNumber": "",
+      "ppm": 22.735368645249764,
+      "jCouplingVals": "",
+      "jCouplingClass": "",
+      "visible": true,
+      "symbol": "C",
+      "iupacLabel": "",
+      "H1_ppm": [
+        1.542881366766383
+      ]
+    }
+  ],
+  "best_results": {
+    "best_weight": 2,
+    "best_mae": 0.34179710746704445,
+    "best_lae": 1.0674895893017435,
+    "best_lae_atomNumber": 1
+  },
+  "workingDirectory": "/opt/topspin4.5.0/examdata/exam_CMCse_1",
+  "workingFilename": "exam_CMCse_1",
+  "title": "exam_CMCse_1",
+  "number_of_hmbc_cosy_subgraphs": 4
+}

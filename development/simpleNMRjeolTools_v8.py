@@ -1567,10 +1567,21 @@ class jeolData:
         if result == QDialog.Accepted:
             self.spectra_assignments = dialog.get_experiment_assignments()
 
-            for assignment in self.spectra_assignments:
-                # remove from list if assigned type is SKIP
-                if assignment["experiment_type"] == "SKIP":
-                    self.spectra_assignments.remove(assignment)
+            # Filter out SKIP-assigned spectra by building a new list rather
+            # than removing from self.spectra_assignments while iterating
+            # over it. The previous in-place .remove() approach shifted list
+            # indices after every removal, which caused the loop to skip the
+            # element immediately following a removed one — so when two or
+            # more SKIP-assigned spectra were adjacent in the list, some of
+            # them silently survived into chosenSpectra and got submitted as
+            # real experiment data despite being explicitly marked SKIP.
+            # See simpleNMR_field_manifest.yaml for the full writeup and
+            # test_skip_filtering.py for a standalone reproduction.
+            self.spectra_assignments = [
+                assignment
+                for assignment in self.spectra_assignments
+                if assignment["experiment_type"] != "SKIP"
+            ]
 
             # create chosenSpectra data
             self.chosenSpectra = get_chosenSpectra(self.spectra_assignments)

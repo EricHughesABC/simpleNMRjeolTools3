@@ -1,0 +1,598 @@
+{
+    "smiles": {
+        "datatype": "smiles",
+        "count": 1,
+        "data": {
+            "0": "CC(=O)/C=C/C1C(C)=CCCC1(C)C"
+        }
+    },
+    "molfile": {
+        "datatype": "molfile",
+        "count": 1,
+        "data": {
+            "0": "\n  CDK    10/13/08,15:9\n\n 14 14  0  0  0  0  0  0  0  0999 V2000\n    3.8971   -0.7500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.2990   -0.7500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    2.5981   -0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000    1.5000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2990    2.2500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -1.2990   -0.7500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.5981   -0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -0.3349   -1.8991    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    5.1962   -0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.2632   -1.8991    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n   -2.5981    1.5000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.2990    2.2500    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    3.8971   -2.2500    0.0000 O   0  0  0  0  0  0  0  0  0  0  0  0\n 11  7  1  0  0  0  0 \n  9  7  1  0  0  0  0 \n  7  8  1  0  0  0  0 \n  7  6  1  0  0  0  0 \n  8 12  1  0  0  0  0 \n 13  4  1  0  0  0  0 \n  6  2  1  0  0  0  0 \n  6  4  1  0  0  0  0 \n  5  4  2  0  0  0  0 \n  5 12  1  0  0  0  0 \n  2  3  2  0  0  0  0 \n 10  1  1  0  0  0  0 \n  3  1  1  0  0  0  0 \n  1 14  2  0  0  0  0 \nM  END\n$$$$\n"
+        }
+    },
+    "hostname": {
+        "datatype": "hostname",
+        "count": 1,
+        "data": {
+            "0": "0x624bb2cbbfd1"
+        }
+    },
+    "workingDirectory": {
+        "datatype": "workingDirectory",
+        "count": 1,
+        "data": {
+            "0": "/opt/topspin4.5.0/examdata/exam_CMCse_1"
+        }
+    },
+    "workingFilename": {
+        "datatype": "workingFilename",
+        "count": 1,
+        "data": {
+            "0": "exam_CMCse_1"
+        }
+    },
+    "allAtomsInfo": {
+        "datatype": "allAtomsInfo",
+        "data": {
+            "0": {
+                "atom_idx": 0,
+                "id": 0,
+                "atomNumber": "1",
+                "symbol": "C",
+                "numProtons": 0
+            },
+            "1": {
+                "atom_idx": 1,
+                "id": 1,
+                "atomNumber": "2",
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "2": {
+                "atom_idx": 2,
+                "id": 2,
+                "atomNumber": "3",
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "3": {
+                "atom_idx": 3,
+                "id": 3,
+                "atomNumber": "4",
+                "symbol": "C",
+                "numProtons": 0
+            },
+            "4": {
+                "atom_idx": 4,
+                "id": 4,
+                "atomNumber": "5",
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "5": {
+                "atom_idx": 5,
+                "id": 5,
+                "atomNumber": "6",
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "6": {
+                "atom_idx": 6,
+                "id": 6,
+                "atomNumber": "7",
+                "symbol": "C",
+                "numProtons": 0
+            },
+            "7": {
+                "atom_idx": 7,
+                "id": 7,
+                "atomNumber": "8",
+                "symbol": "C",
+                "numProtons": 2
+            },
+            "8": {
+                "atom_idx": 8,
+                "id": 8,
+                "atomNumber": "9",
+                "symbol": "C",
+                "numProtons": 3
+            },
+            "9": {
+                "atom_idx": 9,
+                "id": 9,
+                "atomNumber": "10",
+                "symbol": "C",
+                "numProtons": 3
+            },
+            "10": {
+                "atom_idx": 10,
+                "id": 10,
+                "atomNumber": "11",
+                "symbol": "C",
+                "numProtons": 3
+            },
+            "11": {
+                "atom_idx": 11,
+                "id": 11,
+                "atomNumber": "12",
+                "symbol": "C",
+                "numProtons": 2
+            },
+            "12": {
+                "atom_idx": 12,
+                "id": 12,
+                "atomNumber": "13",
+                "symbol": "C",
+                "numProtons": 3
+            },
+            "13": {
+                "atom_idx": 13,
+                "id": 13,
+                "atomNumber": "14",
+                "symbol": "O",
+                "numProtons": 0
+            }
+        },
+        "count": 14
+    },
+    "carbonAtomsInfo": {
+        "datatype": "carbonAtomsInfo",
+        "data": {
+            "0": {
+                "atom_idx": 0,
+                "id": 0,
+                "atomNumber": "1",
+                "symbol": "C",
+                "numProtons": 0
+            },
+            "1": {
+                "atom_idx": 1,
+                "id": 1,
+                "atomNumber": "2",
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "2": {
+                "atom_idx": 2,
+                "id": 2,
+                "atomNumber": "3",
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "3": {
+                "atom_idx": 3,
+                "id": 3,
+                "atomNumber": "4",
+                "symbol": "C",
+                "numProtons": 0
+            },
+            "4": {
+                "atom_idx": 4,
+                "id": 4,
+                "atomNumber": "5",
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "5": {
+                "atom_idx": 5,
+                "id": 5,
+                "atomNumber": "6",
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "6": {
+                "atom_idx": 6,
+                "id": 6,
+                "atomNumber": "7",
+                "symbol": "C",
+                "numProtons": 0
+            },
+            "7": {
+                "atom_idx": 7,
+                "id": 7,
+                "atomNumber": "8",
+                "symbol": "C",
+                "numProtons": 2
+            },
+            "8": {
+                "atom_idx": 8,
+                "id": 8,
+                "atomNumber": "9",
+                "symbol": "C",
+                "numProtons": 3
+            },
+            "9": {
+                "atom_idx": 9,
+                "id": 9,
+                "atomNumber": "10",
+                "symbol": "C",
+                "numProtons": 3
+            },
+            "10": {
+                "atom_idx": 10,
+                "id": 10,
+                "atomNumber": "11",
+                "symbol": "C",
+                "numProtons": 3
+            },
+            "11": {
+                "atom_idx": 11,
+                "id": 11,
+                "atomNumber": "12",
+                "symbol": "C",
+                "numProtons": 2
+            },
+            "12": {
+                "atom_idx": 12,
+                "id": 12,
+                "atomNumber": "13",
+                "symbol": "C",
+                "numProtons": 3
+            }
+        },
+        "count": 13
+    },
+    "nmrAssignments": {
+        "datatype": "nmrAssignments",
+        "count": 0,
+        "data": {}
+    },
+    "c13predictions": {
+        "datatype": "c13predictions",
+        "count": 0,
+        "data": {}
+    },
+    "HMBC_0": {
+        "datatype": "nmrspectrum",
+        "origin": "Bruker XWIN-NMR",
+        "type": "2D",
+        "subtype": "13C1H, HMBC",
+        "experimenttype": "2D-HMBC",
+        "experiment": "HMBC",
+        "class": "",
+        "spectype": "",
+        "pulsesequence": "hmbcetgpl3nd",
+        "intrument": "Avance",
+        "probe": "36",
+        "datafilename": "/opt/topspin4.5.0/examdata/exam_CMCse_1/4",
+        "nucleus": "['1H', '13C']",
+        "specfrequency": "[100.612769, 400.13]",
+        "temperature": "300",
+        "peaks": {
+            "datatype": "peaks",
+            "data": {
+                "0": {
+                    "intensity": 92001.5,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 131.95524950954623,
+                    "delta2": 6.596791620120233
+                },
+                "1": {
+                    "intensity": 1657154.8125,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 198.26748958930173,
+                    "delta2": 6.594738664705815
+                }
+            },
+            "count": 2
+        },
+        "integrals": {
+            "datatype": "integrals",
+            "count": 0,
+            "normValue": 1,
+            "data": {}
+        },
+        "multiplets": {
+            "datatype": "multiplets",
+            "normValue": 1,
+            "data": {},
+            "count": 0
+        },
+        "filename": "HMBC_0"
+    },
+    "HSQC_0": {
+        "datatype": "nmrspectrum",
+        "origin": "Bruker XWIN-NMR",
+        "type": "2D",
+        "subtype": "13C1H, HSQC-EDITED",
+        "experimenttype": "2D-HSQC",
+        "experiment": "HSQC",
+        "class": "",
+        "spectype": "",
+        "pulsesequence": "hsqcedetgpsp.3",
+        "intrument": "Avance",
+        "probe": "36",
+        "datafilename": "/opt/topspin4.5.0/examdata/exam_CMCse_1/3",
+        "nucleus": "['1H', '13C']",
+        "specfrequency": "[100.612769, 400.13]",
+        "temperature": "300",
+        "peaks": {
+            "datatype": "peaks",
+            "data": {
+                "0": {
+                    "intensity": 11035963.18801117,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 148.9970298427109,
+                    "delta2": 6.592842210345895
+                },
+                "1": {
+                    "intensity": 10456747.109222412,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 132.2842971161677,
+                    "delta2": 6.028161762607363
+                },
+                "2": {
+                    "intensity": 12651580.113342285,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 122.61579115438111,
+                    "delta2": 5.477283531457159
+                },
+                "3": {
+                    "intensity": 14011700.53125,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 54.26874036655684,
+                    "delta2": 2.260644679114706
+                },
+                "4": {
+                    "intensity": 34334443.01953125,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 26.894295290335208,
+                    "delta2": 2.229941872722076
+                },
+                "5": {
+                    "intensity": -35192810.1875,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 22.970412179118284,
+                    "delta2": 2.0257646924308537
+                },
+                "6": {
+                    "intensity": 41024930.052734375,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 22.735368645249764,
+                    "delta2": 1.542881366766383
+                },
+                "7": {
+                    "intensity": -12615218.855957031,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 31.179587696875032,
+                    "delta2": 1.4398088088720442
+                },
+                "8": {
+                    "intensity": -14573264.498046875,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 31.184135900956264,
+                    "delta2": 1.2024880687593686
+                },
+                "9": {
+                    "intensity": 54424082.9921875,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 26.749368933554308,
+                    "delta2": 0.9075206344385425
+                },
+                "10": {
+                    "intensity": 57782469.375,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 27.77890692121025,
+                    "delta2": 0.8327910702915897
+                }
+            },
+            "count": 11
+        },
+        "integrals": {
+            "datatype": "integrals",
+            "count": 0,
+            "normValue": 1,
+            "data": {}
+        },
+        "multiplets": {
+            "datatype": "multiplets",
+            "normValue": 1,
+            "data": {},
+            "count": 0
+        },
+        "filename": "HSQC_0"
+    },
+    "COSY_0": {
+        "datatype": "nmrspectrum",
+        "origin": "Bruker XWIN-NMR",
+        "type": "2D",
+        "subtype": "1H1H, COSY",
+        "experimenttype": "2D-COSY",
+        "experiment": "COSY",
+        "class": "",
+        "spectype": "",
+        "pulsesequence": "cosygpmfqf",
+        "intrument": "Avance",
+        "probe": "36",
+        "datafilename": "/opt/topspin4.5.0/examdata/exam_CMCse_1/2",
+        "nucleus": "['1H', '1H']",
+        "specfrequency": "[400.13, 400.13]",
+        "temperature": "300",
+        "peaks": {
+            "datatype": "peaks",
+            "data": {
+                "0": {
+                    "intensity": 5699691.0625,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 2.266098725974011,
+                    "delta2": 6.59537413058546
+                },
+                "1": {
+                    "intensity": 4163330.1875,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 6.039245222555125,
+                    "delta2": 6.59395942141974
+                },
+                "2": {
+                    "intensity": 1649880.625,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 6.595636942265821,
+                    "delta2": 2.263534665151595
+                },
+                "3": {
+                    "intensity": 446594.3125,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 5.482853502844437,
+                    "delta2": 2.0272782344763973
+                },
+                "4": {
+                    "intensity": 3852494.125,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 5.490222929595571,
+                    "delta2": 1.5434476998002438
+                },
+                "5": {
+                    "intensity": 3054320.1875,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 2.0216883040344693,
+                    "delta2": 1.4409270001059828
+                },
+                "6": {
+                    "intensity": 3782778.875,
+                    "type": 0,
+                    "annotation": "",
+                    "delta1": 0.8353040792410356,
+                    "delta2": 0.9080792033062975
+                }
+            },
+            "count": 7
+        },
+        "integrals": {
+            "datatype": "integrals",
+            "count": 0,
+            "normValue": 1,
+            "data": {}
+        },
+        "multiplets": {
+            "datatype": "multiplets",
+            "normValue": 1,
+            "data": {},
+            "count": 0
+        },
+        "filename": "COSY_0"
+    },
+    "chosenSpectra": {
+        "datatype": "chosenSpectra",
+        "count": 3,
+        "data": {
+            "0": "[1H, 13C] 2D hmbcetgpl3nd HMBC_0 HMBC",
+            "1": "[1H, 13C] 2D hsqcedetgpsp.3 HSQC_0 HSQC",
+            "2": "[1H, 1H] 2D cosygpmfqf COSY_0 COSY"
+        }
+    },
+    "exptIdentifiers": {
+        "count": 6,
+        "datatype": "exptIdentifiers",
+        "data": {
+            "0": "Unknown",
+            "1": "H1_1D",
+            "2": "HMBC",
+            "3": "HSQC",
+            "4": "COSY",
+            "5": "C13_1D"
+        }
+    },
+    "spectraWithPeaks": {
+        "datatype": "spectraWithPeaks",
+        "count": 5,
+        "data": {
+            "0": "1H 1D zg 1.fid_0",
+            "1": "[1H, 13C] HMBC hmbcetgpl3nd 4.ser_0",
+            "2": "[1H, 13C] HSQC hsqcedetgpsp.3 3.ser_0",
+            "3": "[1H, 1H] COSY cosygpmfqf 2.ser_0",
+            "4": "13C 1D zgpg30 5.fid_0"
+        }
+    },
+    "carbonCalcPositionsMethod": {
+        "datatype": "carbonCalcPositionsMethod",
+        "count": 1,
+        "data": {
+            "0": "Calculated Positions"
+        }
+    },
+    "MNOVAcalcMethod": {
+        "datatype": "MNOVAcalcMethod",
+        "count": 1,
+        "data": {
+            "0": "NMRSHIFTDB2 Predict"
+        }
+    },
+    "randomizeStart": {
+        "datatype": "randomizeStart",
+        "count": 1,
+        "data": {
+            "0": false
+        }
+    },
+    "startingTemperature": {
+        "datatype": "startingTemperature",
+        "count": 1,
+        "data": {
+            "0": 1000
+        }
+    },
+    "endingTemperature": {
+        "datatype": "endingTemperature",
+        "count": 1,
+        "data": {
+            "0": 0.1
+        }
+    },
+    "coolingRate": {
+        "datatype": "coolingRate",
+        "count": 1,
+        "data": {
+            "0": 0.999
+        }
+    },
+    "numberOfSteps": {
+        "datatype": "numberOfSteps",
+        "count": 1,
+        "data": {
+            "0": 10000
+        }
+    },
+    "ppmGroupSeparation": {
+        "datatype": "ppmGroupSeparation",
+        "count": 1,
+        "data": {
+            "0": 2
+        }
+    },
+    "ml_consent": {
+        "datatype": "ml_consent",
+        "count": 1,
+        "data": {
+            "0": false
+        }
+    },
+    "simulatedAnnealing": {
+        "datatype": "simulatedAnnealing",
+        "count": 1,
+        "data": {
+            "0": true
+        }
+    }
+}
