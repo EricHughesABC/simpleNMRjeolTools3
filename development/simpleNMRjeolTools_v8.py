@@ -1,4 +1,4 @@
-# simpleNMRjeolTools_v6.py
+# simpleNMRjeolTools_v8.py
 #
 # v6 changes:
 #   - commandline() now looks for an auto-saved "input.jjh5" in the current
@@ -28,12 +28,7 @@ if _conda_bin not in _current_path.split(os.pathsep):
     os.environ["PATH"] = _conda_bin + os.pathsep + _current_path
 os.environ.setdefault("CONDA_PREFIX", str(Path(sys.executable).parent.parent))
 from typing import Dict, List, Optional
-from dataclasses import dataclass
-from enum import Enum
 from datetime import datetime
-import requests
-import webbrowser
-import threading
 import h5py
 import numpy as np
 import pandas as pd
@@ -41,10 +36,40 @@ import json
 from rdkit import Chem
 import fire
 
-# from guidata.qthelpers import qt_app_context
-
-from chooseSpectra import NMRExperimentDialog
-from displayHTML_pyside import MainWindow
+# ── simplenmr_builder — hard dependency, 2026-08-28 ──────────────────────
+# Previously each of these was imported defensively with a local fallback:
+# chooseSpectra.py (dialog), displayHTML_pyside.py (viewer), ~250 lines of
+# duplicated submission/registration code, and the original hand-rolled
+# createJsonDict()/append_specdata(). Fallbacks that exist purely to cover
+# "the shared library isn't installed" are exactly the failure mode this
+# project has spent most of a session fixing — the original SKIP-removal
+# bug survived unfixed in 7 separate copies of this file for the same
+# reason, and a stale local submission.py already caused one real silent
+# regression this project. simplenmr_builder is now a hard dependency:
+# if it's missing, fail loudly and immediately at import time with a
+# clear fix, rather than silently running on stale, unmaintained local
+# duplicates that no longer get bugfixes.
+try:
+    from simplenmr_builder import SimpleNMRBuilder, ContractError
+    from simplenmr_builder.gui.spectrum_assignment_dialog import (
+        SpectrumAssignmentDialog as NMRExperimentDialog,
+    )
+    from simplenmr_builder.gui.html_viewer import MainWindow
+    from simplenmr_builder.gui.submission import (
+        SubmissionOutcome,
+        SubmissionResult,
+        submit_to_server,
+        check_user_registration,
+        open_result_viewer_subprocess,
+    )
+except ImportError as e:
+    print(
+        "ERROR: simplenmr_builder[gui,viewer] is not installed in this "
+        "environment. Install it with:\n"
+        '    pip install -e "<path-to-simpleNMRbuilder>[gui,viewer]"\n'
+        f"\nUnderlying import error: {e}"
+    )
+    sys.exit(1)
 
 from qtpy.QtWidgets import (
     QProgressDialog,
@@ -1404,123 +1429,106 @@ class jeolData:
         # add carbonCalcPositionsMethod
         self.carbonCalcPositionsMethod = createCarbonCalcPositionsMethod()
 
-    def createJsonDict(self) -> dict:
+    def append_specdata(self, builder: "SimpleNMRBuilder") -> None:
         """
-        Creates and returns a dictionary containing all relevant data for JSON serialization.
+        Same experiment-matching logic as append_specdata() (splitting
+        each chosenSpectra entry, looking up the matching dataset,
+        attaching spec_info/peaks/integrals/multiplets), but adds each
+        block through builder.spectra.add_block(token, block) instead of
+        indexing a hand-maintained expts_type_count dict.
 
-        The dictionary includes molecular information, calculation methods, atom data, predictions,
-        spectra information, simulated annealing results, machine learning consent, and additional
-        spectral data appended from `append_specdata()`.
-
-        Returns:
-            dict: A dictionary with all necessary fields for JSON output.
+        This is the exact mechanism that caused the confirmed 2026-08-27
+        KeyError bug for DEPT135/DDEPTCH3ONLY (see CHANGES.md) —
+        SpectrumBuilder owns per-token block numbering internally and
+        validates every token against the canonical NMREXPERIMENTS list,
+        so an unrecognized token now raises a clear ValueError immediately
+        instead of crashing deep in a dict lookup, or (for a token that's
+        merely wrong rather than absent from the counter dict) silently
+        vanishing with no error anywhere.
         """
-
-        json_dict = {
-            "smiles": self.smiles,
-            "molfile": self.molfile,
-            "hostname": self.hostname,
-            "workingDirectory": self.workingDirectory,
-            "workingFilename": self.workingFilename,
-            "MNOVAcalcMethod": self.MNOVAcalcMethod,
-            "carbonCalcPositionsMethod": self.carbonCalcPositionsMethod,
-            "allAtomsInfo": self.allatomsInfo,
-            "carbonAtomsInfo": self.carbonatomsInfo,
-            "c13predictions": self.c13predictions,
-            "chosenSpectra": self.chosenSpectra,
-            "spectraWithPeaks": self.spectraWithPeaks,
-            "simulatedAnnealing": {
-                "datatype": "simulatedAnnealing",
-                "count": 1,
-                "data": {"0": self.simulated_annealing},
-            },
-            "ml_consent": {
-                "datatype": "ml_consent",
-                "count": 1,
-                "data": {"0": self.ml_consent},
-            },
-        }
-
-        spec_dict = self.append_specdata()
-
-        # merge the two dictionaries
-        json_dict.update(spec_dict)
-
-        return json_dict
-
-    def append_specdata(self) -> dict:
-        """
-        Appends selected spectral data to a dictionary for JSON export.
-
-        This method processes the chosen spectra assignments, matches them to datasets with peaks,
-        and organizes the spectral data by experiment type and index. It includes information such as
-        spec_info, peaks, integrals, and multiplets for each spectrum.
-
-        Returns:
-            dict: A dictionary where keys are spectrum identifiers (e.g., 'HSQC_0', 'COSY_1') and values
-                  are dictionaries containing spectral data and metadata.
-        """
-        expts_type_count: dict[str, int] = {
-            "SKIP": 0,
-            "H1_1D": 0,
-            "C13_1D": 0,
-            "Pureshift": 0,
-            "DEPT": 0,
-            "COSY": 0,
-            "NOESY": 0,
-            "HSQC": 0,
-            "HMBC": 0,
-            "DDEPT_CH3_ONLY": 0,
-            "HSQC_CLIPCOSY": 0,
-        }
-
         expt_kys: list[str] = []
         expt_types: list[str] = []
         for idx, expt_id in self.chosenSpectra["data"].items():
-            # split expt_id into a list based on space
             expt_id_parts = expt_id.split(" ")
-            # if length of list greater than 4 then combine the first two items together with " "
             if len(expt_id_parts) > 4:
                 expt_id_parts = [" ".join(expt_id_parts[:2])] + expt_id_parts[2:]
-
-            expt_ky = expt_id_parts[-2]
-            expt_type = expt_id_parts[-1]
-
-            expt_kys.append(expt_ky)
-            expt_types.append(expt_type)
-
-        # get the experiment from data_with_peaks based on expt_ky
-        exptNameToKey: dict[str, str] = {}
-
-        for id, data in self.datasets_with_peaks.items():
-            exptNameToKey[data["spec_info"]["expt_fn"]] = id
-            print(f"Experiment: {data['spec_info']['expt_fn']}, ID: {id}")
-
-        spectra: dict[str, dict] = {}
+            expt_kys.append(expt_id_parts[-2])
+            expt_types.append(expt_id_parts[-1])
 
         for expt_ky, expt_type in zip(expt_kys, expt_types):
-            data = None
-
             data = self.datasets_with_peaks.get(expt_ky, None)
-            if data:
-                spec_id = f"{expt_type}_{expts_type_count[expt_type]}"
-                spectra[spec_id] = {}
-                expts_type_count[expt_type] += 1
-                spectra[spec_id]["datatype"] = "nmrspectrum"
-
-                # add spec_info
-                for k, v in data["spec_info"].items():
-                    spectra[spec_id][k] = v
-                # add peaks
-                spectra[spec_id]["peaks"] = data["peaks"]
-                # add integrals
-                spectra[spec_id]["integrals"] = data["integrals"]
-                # add multiplets
-                spectra[spec_id]["multiplets"] = data["multiplets"]
-            else:
+            if not data:
                 print(f"Experiment {expt_ky} not found")
+                continue
 
-        return spectra
+            block = {"datatype": "nmrspectrum"}
+            for k, v in data["spec_info"].items():
+                block[k] = v
+            block["peaks"] = data["peaks"]
+            block["integrals"] = data["integrals"]
+            block["multiplets"] = data["multiplets"]
+
+            builder.spectra.add_block(expt_type, block)
+
+    def createJsonDict(self, validator_path=None) -> dict:
+        """
+        Preferred replacement for createJsonDict(): builds the submission
+        payload through simplenmr_builder.SimpleNMRBuilder instead of
+        hand-assembling json_dict directly. Extracts raw values out of the
+        envelope dicts already computed in __init__ (self.smiles,
+        self.molfile, etc. are already {"datatype","count","data"}
+        envelopes from create_smiles()/create_molfile()/etc. — the builder
+        wants raw values and rebuilds the envelope itself, so this reads
+        ["data"]["0"] or list(...["data"].values()) as appropriate rather
+        than re-deriving anything).
+
+        Runs the real required-field checks (refuses to proceed if
+        smiles/molfile/carbonAtomsInfo would be missing — the three fields
+        with no server-side fallback) and the real schema + HSQC-presence
+        validation from validate_simplenmr_json.py before returning,
+        matching what the server itself will check.
+        """
+        builder = SimpleNMRBuilder(source="jeol")
+
+        builder.set_scalar("smiles", self.smiles["data"]["0"])
+        builder.set_scalar("molfile", self.molfile["data"]["0"])
+        builder.set_scalar("hostname", self.hostname["data"]["0"])
+        builder.set_scalar("MNOVAcalcMethod", self.MNOVAcalcMethod["data"]["0"])
+        builder.set_scalar("carbonCalcPositionsMethod", self.carbonCalcPositionsMethod["data"]["0"])
+        builder.set_scalar("simulatedAnnealing", self.simulated_annealing)
+        builder.set_scalar("ml_consent", self.ml_consent)
+        # workingDirectory/workingFilename: server_consumed=false per the
+        # manifest (harmless passthrough server-side), but submit_to_server()
+        # / _write_html_result() / _log_submission_error() below all read
+        # these back OUT of json_data locally, after the round trip, to know
+        # where to write the HTML result and error log. Omitting them here
+        # doesn't break the server call itself but crashes the *local*
+        # post-submission file-writing step with a bare KeyError — confirmed
+        # 2026-08-27 from a real run ("Error submitting to simpleNMR server:
+        # 'workingFilename'"), even though the server had already responded
+        # successfully. Both fields must be included regardless of whether
+        # the schema marks them required.
+        builder.set_scalar("workingDirectory", self.workingDirectory["data"]["0"])
+        builder.set_scalar("workingFilename", self.workingFilename["data"]["0"])
+
+        builder.set_all_atoms_info(list(self.allatomsInfo["data"].values()))
+        builder.set_carbon_atoms_info(list(self.carbonatomsInfo["data"].values()))
+        builder.set_c13predictions(list(self.c13predictions["data"].values()))
+
+        self.append_specdata(builder)
+
+        # self.chosenSpectra was already filtered for SKIP entries by the
+        # fix in choosePeakPickedSpectaforSimpleNMR() above (list
+        # comprehension, not mutate-while-iterating) — skip=False here
+        # just registers each already-filtered entry with the builder for
+        # consistency, it doesn't re-filter anything.
+        for entry in self.chosenSpectra["data"].values():
+            builder.spectra.add_chosen_candidate(entry, skip=False)
+
+        for entry in self.spectraWithPeaks["data"].values():
+            builder.spectra.add_spectrum_with_peaks(entry)
+
+        return builder.build(validator_path=validator_path)
 
     def choosePeakPickedSpectaforSimpleNMR(self):
         """
@@ -1558,7 +1566,6 @@ class jeolData:
             experiment_names.append(expt_name)
             chosen_types[expt_name] = expt_type
 
-        # Create and show the dialog
         dialog = NMRExperimentDialog(experiment_names, chosen_types=chosen_types)
 
         # Execute dialog and get result
@@ -1594,398 +1601,6 @@ class jeolData:
         else:
             print("\nDialog was cancelled by user.")
             self.analysis_cancelled = True
-
-
-class SubmissionOutcome(Enum):
-    """Classifies every distinct way /simpleMNOVA can respond.
-
-    See routes.py::simpleMNOVA_display_molecule for the source of truth:
-      - SUCCESS: status 200, HTML body -> the rendered D3 result page.
-      - DIAGNOSTIC_HTML: non-200 status, but the body is still a full HTML
-        document (e.g. a "misassignment of molecule" diagnostic report
-        with comparison tables, returned by some pipeline failures with
-        status 400 so the user can see where assignment got stuck). This
-        is content meant to be viewed, not a plain error string - status
-        code alone doesn't distinguish it from ERROR, the body shape does.
-      - UNREGISTERED / REGISTRATION_EXPIRED: status 200, but a JSON body
-        (Content-Type: application/json) with {"status": ...}. Status code
-        alone does NOT distinguish this from SUCCESS - Content-Type does.
-      - ERROR: non-200 status with a body that is NOT a full HTML document
-        (short plain-text validation errors, or a 200 JSON body that
-        doesn't match the known unregistered/registration_expired shape).
-      - NETWORK_ERROR: requests.RequestException - no HTTP response at all.
-    """
-
-    SUCCESS = "success"
-    DIAGNOSTIC_HTML = "diagnostic_html"
-    UNREGISTERED = "unregistered"
-    REGISTRATION_EXPIRED = "registration_expired"
-    ERROR = "error"
-    NETWORK_ERROR = "network_error"
-
-
-@dataclass
-class SubmissionResult:
-    """Outcome of submit_to_server(), replacing the old bare bool return.
-
-    A bool can't distinguish "unregistered" from "pipeline error" from
-    "network unreachable" - each needs different follow-up behaviour in
-    __main__ (open the viewer vs. open a registration page vs. just stop),
-    so callers must branch on `outcome` rather than truthiness.
-    """
-
-    outcome: SubmissionOutcome
-    html_path: Optional[Path] = None
-    message: Optional[str] = None
-    status_code: Optional[int] = None
-    registration_url: Optional[str] = None
-    log_path: Optional[Path] = None
-
-
-def _log_submission_error(
-    json_data: Dict, status_code, body: str, content_type: str = ""
-) -> Optional[Path]:
-    """Append raw error details to a log file next to the HTML output.
-
-    Kept separate from the JSON input file so it can accumulate multiple
-    submission attempts. Returns the log file path on success, or None if
-    logging itself failed (never raises - logging must not mask the
-    original error).
-    """
-    try:
-        fn_str = json_data.get("workingDirectory", {}).get("data", {}).get("0", ".")
-        log_dir = Path(fn_str, "html")
-        log_dir.mkdir(parents=True, exist_ok=True)
-        log_path = log_dir / "simpleNMR_submission_errors.log"
-
-        timestamp = datetime.now().isoformat(timespec="seconds")
-        with open(log_path, "a", encoding="utf-8") as f:
-            f.write(f"\n{'=' * 70}\n")
-            f.write(f"Timestamp: {timestamp}\n")
-            f.write(f"Status code: {status_code}\n")
-            f.write(f"Content-Type: {content_type}\n")
-            f.write(f"Body:\n{body}\n")
-
-        return log_path
-    except Exception as e:
-        print(f"Failed to write submission error log: {e}")
-        return None
-
-
-def _looks_like_html(text: str) -> bool:
-    """Sniff whether a response body is a full HTML document.
-
-    Used to distinguish a real page (success result, or a diagnostic
-    report like the "misassignment of molecule" tables page, which can
-    come back with a non-200 status) from a short plain-text error
-    message like "Invalid JSON: ...". Deliberately simple: checks the
-    first ~500 characters (skipping any leading HTML comment) for a
-    doctype or <html> tag, rather than trying to fully parse the body.
-    """
-    if not text:
-        return False
-    head = text.lstrip()[:500].lower()
-    return "<!doctype html" in head or "<html" in head
-
-
-def _write_html_result(json_data: Dict, response_text: str) -> Path:
-    """Write a response body to <workingDirectory>/html/<workingFilename>.html.
-
-    Shared by SUCCESS and DIAGNOSTIC_HTML - both need the same file
-    written for MainWindow to open, they differ only in the status-bar
-    note MainWindow shows once it's open.
-    """
-    workingFilename = json_data["workingFilename"]["data"].get(
-        "0", "nmr_analysis_result"
-    )
-    response_text = response_text.replace("dummy_title", workingFilename)
-
-    fn_str = json_data["workingDirectory"]["data"].get("0", ".")
-    fn_path = Path(fn_str, "html")
-    fn_path.mkdir(parents=True, exist_ok=True)
-    fn_path = Path(fn_path, workingFilename + ".html")
-
-    with open(fn_path, "w", encoding="utf-8") as f:
-        f.write(response_text)
-
-    return fn_path
-
-
-def submit_to_server(json_data: Dict, simpleNMR_address: str) -> SubmissionResult:
-    """
-    Submit the JSON data to the processing server with progress dialog.
-
-    Classifies the response per routes.py's actual contract for
-    /simpleMNOVA (see SubmissionOutcome docstring) rather than assuming
-    status 200 always means "here is the HTML to display" - it can also
-    mean an unregistered/expired-registration JSON response.
-
-    Args:
-        json_data: The converted JSON data
-
-    Returns:
-        SubmissionResult describing what happened and what (if anything)
-        the caller should do next.
-    """
-
-    # Create progress dialog
-    progress = QProgressDialog(
-        "Submitting data to simpleNMR server...", "Cancel", 0, 400
-    )
-    progress.setWindowModality(Qt.WindowModal)
-    progress.setMinimumDuration(0)
-    progress.setCancelButton(
-        None
-    )  # Remove cancel button since we can't easily cancel the request
-    progress.show()
-
-    # Variables to store result, populated by make_request() in the
-    # background thread and read back out once it finishes.
-    result = {
-        "outcome": None,
-        "html_path": None,
-        "message": None,
-        "status_code": None,
-        "registration_url": None,
-        "log_path": None,
-        "finished": False,
-    }
-
-    def make_request():
-        try:
-            print("Submitting data to simpleNMR server...")
-
-            response = requests.post(
-                simpleNMR_address,
-                headers={"Content-Type": "application/json"},
-                json=json_data,
-                timeout=100,
-            )
-
-            content_type = response.headers.get("Content-Type", "")
-            is_json = "application/json" in content_type.lower()
-
-            if is_json:
-                # Could be the unregistered / registration_expired shape,
-                # or (defensively) some other JSON we don't recognise.
-                try:
-                    response_data = response.json()
-                except ValueError:
-                    response_data = None
-
-                status_field = (
-                    response_data.get("status")
-                    if isinstance(response_data, dict)
-                    else None
-                )
-
-                if status_field == "unregistered":
-                    result["outcome"] = SubmissionOutcome.UNREGISTERED
-                    result["registration_url"] = response_data.get("registration_url")
-                    result["message"] = "This machine is not registered."
-                    result["status_code"] = response.status_code
-                elif status_field == "registration_expired":
-                    result["outcome"] = SubmissionOutcome.REGISTRATION_EXPIRED
-                    result["registration_url"] = response_data.get("registration_url")
-                    result["message"] = "Registration for this machine has expired."
-                    result["status_code"] = response.status_code
-                else:
-                    # Unexpected JSON shape - don't guess, log and surface it.
-                    error_msg = f"Unexpected JSON response: {response.text}"
-                    print(error_msg)
-                    result["outcome"] = SubmissionOutcome.ERROR
-                    result["status_code"] = response.status_code
-                    result["message"] = error_msg
-                    result["log_path"] = _log_submission_error(
-                        json_data, response.status_code, response.text, content_type
-                    )
-
-            elif _looks_like_html(response.text):
-                # A real HTML document, whether or not status is 200.
-                # Some pipeline failures deliberately return a full
-                # diagnostic report (e.g. a "misassignment of molecule"
-                # page with comparison tables) with a non-200 status, so
-                # the user can see where assignment got stuck - that's
-                # content to display, not a plain error string.
-                fn_path = _write_html_result(json_data, response.text)
-
-                if response.status_code == 200:
-                    result["outcome"] = SubmissionOutcome.SUCCESS
-                else:
-                    result["outcome"] = SubmissionOutcome.DIAGNOSTIC_HTML
-                    result["status_code"] = response.status_code
-                    # Still recorded for the record, even though this
-                    # isn't treated as a blocking error - no dialog shown
-                    # for this outcome (see below).
-                    result["log_path"] = _log_submission_error(
-                        json_data, response.status_code, response.text, content_type
-                    )
-
-                result["html_path"] = fn_path
-
-            else:
-                # Non-200 and not HTML: short plain-text validation errors
-                # ("Invalid JSON: ...", "No JSON data received", etc.) or
-                # an arbitrary PipelineError message that isn't a report
-                # page. Never write/open this as if it were a result.
-                error_msg = f"Server error: {response.status_code} - {response.text}"
-                print(error_msg)
-                result["outcome"] = SubmissionOutcome.ERROR
-                result["status_code"] = response.status_code
-                result["message"] = response.text
-                result["log_path"] = _log_submission_error(
-                    json_data, response.status_code, response.text, content_type
-                )
-
-        except requests.RequestException as e:
-            error_msg = f"Network error: {e}"
-            print(error_msg)
-            result["outcome"] = SubmissionOutcome.NETWORK_ERROR
-            result["message"] = error_msg
-        except Exception as e:
-            error_msg = f"Error submitting to simpleNMR server: {e}"
-            print(error_msg)
-            result["outcome"] = SubmissionOutcome.ERROR
-            result["message"] = error_msg
-            result["log_path"] = _log_submission_error(json_data, None, error_msg)
-        finally:
-            result["finished"] = True
-
-    # Start request in background thread
-    thread = threading.Thread(target=make_request)
-    thread.daemon = True
-    thread.start()
-
-    # Process events until request is complete
-    while not result["finished"]:
-        QApplication.processEvents()
-        thread.join(0.1)  # Check every 100ms
-
-        # Update progress dialog text periodically to show it's still working
-        progress.setValue((progress.value() + 1))
-
-    progress.close()
-
-    outcome = result["outcome"]
-
-    # Show the appropriate dialog for every non-success outcome. SUCCESS
-    # is deliberately silent here - the viewer window opening is itself
-    # the feedback; __main__ handles opening it.
-    if outcome == SubmissionOutcome.NETWORK_ERROR:
-        QMessageBox.critical(
-            None,
-            "Network Error",
-            f"Could not reach the simpleNMR server:\n{result['message']}",
-        )
-    elif outcome == SubmissionOutcome.ERROR:
-        log_note = (
-            f"\n\nDetails logged to:\n{result['log_path']}"
-            if result["log_path"]
-            else ""
-        )
-        QMessageBox.critical(
-            None,
-            "Submission Error",
-            f"Server returned an error"
-            f"{' (status ' + str(result['status_code']) + ')' if result['status_code'] is not None else ''}:\n"
-            f"{result['message']}{log_note}",
-        )
-    elif outcome in (
-        SubmissionOutcome.UNREGISTERED,
-        SubmissionOutcome.REGISTRATION_EXPIRED,
-    ):
-        title = (
-            "Registration Required"
-            if outcome == SubmissionOutcome.UNREGISTERED
-            else "Registration Expired"
-        )
-        QMessageBox.warning(None, title, result["message"])
-        if result["registration_url"]:
-            webbrowser.open(result["registration_url"])
-
-    return SubmissionResult(
-        outcome=outcome,
-        html_path=result["html_path"],
-        message=result["message"],
-        status_code=result["status_code"],
-        registration_url=result["registration_url"],
-        log_path=result["log_path"],
-    )
-
-
-def check_user_registration(address) -> bool:
-    """
-    Check if the user's machine is registered for the service.
-
-    Returns:
-        True if user can proceed, False otherwise
-    """
-    try:
-        # Generate machine ID (MAC address based)
-        mac_based_id = hex(uuid.getnode())
-        print(f"Machine ID: {mac_based_id}")
-
-        # Prepare request
-        json_obj = {"hostname": mac_based_id}
-        entry_point = address
-
-        print(f"Checking registration at: {entry_point}")
-
-        # Make the POST request
-        response = requests.post(
-            entry_point,
-            headers={"Content-Type": "application/json"},
-            json=json_obj,
-            timeout=100,
-        )
-
-        print(f"Registration check response: {response.status_code}")
-
-        if response.status_code == 200:
-            try:
-                response_data = response.json()
-            except json.JSONDecodeError:
-                print("Invalid JSON response from server.")
-                # myGUIDATAwarn("Invalid JSON response from server.")
-                return False
-
-            status = response_data.get("status", False)
-
-            if isinstance(status, str) and status.strip().lower() == "unregistered":
-                print("Machine is unregistered. Opening registration page...")
-                registration_url = response_data.get("registration_url", "")
-                if registration_url:
-                    webbrowser.open(registration_url)
-                else:
-                    print("No registration URL provided.")
-                # myGUIDATAwarn("No registration URL provided.")
-                return False
-
-            elif isinstance(status, str) and status.strip().lower() == "registered":
-                print("Machine is registered. Proceeding...")
-                return True
-
-            elif isinstance(status, bool) and not status:
-                print("Registration status unclear.")
-                # myGUIDATAwarn("Registration status unclear.")
-                return False
-
-        else:
-            print(
-                f"Registration check failed: {response.status_code} - {response.text}"
-            )
-            # myGUIDATAwarn(f"Registration check failed: {response.status_code} - {response.text}")
-
-    except requests.RequestException as e:
-        print(f"Network error during registration check: {e}")
-        print("Proceeding without registration check...")
-        # myGUIDATAwarn("Network error during registration check. Proceeding without registration check.")
-        return True  # Allow offline usage
-    except Exception as e:
-        print(f"Error during registration check: {e}")
-        # myGUIDATAwarn(f"Error during registration check: {e}")
-
-    return False
 
 
 def log_launch_diagnostics(launch_note: str = "") -> Optional[Path]:
@@ -2097,7 +1712,20 @@ if __name__ == "__main__":
         )
         sys.exit()
 
-    jeol_dict = jeol_data.createJsonDict()
+    try:
+        jeol_dict = jeol_data.createJsonDict()
+    except ContractError as e:
+        print(
+            f"\nERROR: simplenmr_builder rejected this submission before it was "
+            f"written: {e}\nThis means the server would also reject (or crash on) "
+            f"this file — fix the underlying data issue rather than bypassing this "
+            f"check.\n"
+        )
+        show_info_message(
+            "Submission Rejected",
+            f"The data could not be validated for submission:\n\n{e}",
+        )
+        sys.exit(1)
 
     print(dir(jeol_data))
 
@@ -2139,21 +1767,30 @@ if __name__ == "__main__":
 
         if submission.outcome == SubmissionOutcome.SUCCESS:
             print("Analysis complete! Opening results viewer...")
-            window = MainWindow(str(submission.html_path))
-            window.show()
-            # Blocks until the viewer window is closed, then ends the program.
-            sys.exit(app.exec())
+            # Launched as a SEPARATE process (when simplenmr_builder is
+            # available) rather than in-process — previously JASON's own
+            # process ran MainWindow directly and called sys.exit(app.exec()),
+            # which could require a manual Ctrl-C to actually terminate:
+            # QtWebEngine can leave background threads alive even after
+            # the Qt event loop returns. The shared subprocess entry
+            # point (html_viewer.py's __main__) force-exits with
+            # os._exit() the moment its window closes, which this
+            # process doesn't get the benefit of when running MainWindow
+            # in-process. wait=True blocks here until the viewer window
+            # closes, so this script's own lifetime still visibly tracks
+            # the viewer's, matching the previous UX, but now without the
+            # hang. Confirmed 2026-08-27 fixing the equivalent issue for
+            # the Bruker converter; applied here for consistency even
+            # though it hadn't been separately reported for JEOL yet.
+            open_result_viewer_subprocess(submission, wait=True)
+            sys.exit(0)
         elif submission.outcome == SubmissionOutcome.DIAGNOSTIC_HTML:
             print(
                 f"Server returned a diagnostic report (status {submission.status_code}). "
                 "Opening it in the viewer..."
             )
-            window = MainWindow(
-                str(submission.html_path),
-                status_note=f"Server status {submission.status_code} — diagnostic report, not a completed result",
-            )
-            window.show()
-            sys.exit(app.exec())
+            open_result_viewer_subprocess(submission, wait=True)
+            sys.exit(0)
         else:
             # submit_to_server() has already shown the appropriate dialog
             # (network error / server error / registration required or

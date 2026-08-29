@@ -21,17 +21,25 @@ class NMRExperimentDialog(QDialog):
         self.setModal(True)
         self.resize(600, 450)  # Slightly taller for checkboxes
 
-        # Fixed list of experiment types
+        # Fixed list of experiment types. These MUST match the server's
+        # literal NMREXPERIMENTS tokens exactly (config/globals.py in
+        # simpleNMRtools) — "Pureshift" and "HSQCCLIPCOSY" here previously
+        # did not (server tokens are "H1_pureshift" and "HSQC_CLIPCOSY"),
+        # which meant any spectrum a user assigned to either type would
+        # never classify server-side and would be silently discarded as
+        # an unrecognized/"orphan" block, with no error shown anywhere.
+        # Fixed 2026-08-27 — see simpleNMR_field_manifest.yaml and
+        # simplenmr_builder's NMREXPERIMENTS constant for the canonical list.
         self.experiment_types = [
             "SKIP",
             "H1_1D",
             "C13_1D",
-            "Pureshift",
+            "H1_pureshift",
             "DEPT135",
             "HSQC",
             "HMBC",
             "COSY",
-            "HSQCCLIPCOSY",
+            "HSQC_CLIPCOSY",
             "DDEPTCH3ONLY",
         ]
 
