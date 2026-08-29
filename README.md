@@ -1,22 +1,64 @@
 # simpleNMRjeolTools
-interface between JEOL Jason NMR files and simpleNMR
 
-## Running the program
+JEOL/JASON client for [simpleNMR](https://github.com/EricHughesABC/simpleNMRtools) —
+reads a `.jjh5` NMR file, lets the user assign spectrum types via a shared
+dialog, builds the JSON payload the simpleNMR server expects, submits it,
+and opens the result in a PyQt viewer.
 
-Run the program from the directory where the file ***simpleNMRjeolTools.py*** is from the comand line
+## Installing
 
-```python simpleNMRjeolTools.py```
+```bash
+pip install -e .
+```
 
+This installs a `simplenmr-jeol` command (via `[project.scripts]`) and
+pulls in [`simpleNMRbuilder`](https://github.com/EricHughesABC/simpleNMRbuilder)
+— the shared JSON-contract/dialog/submission library also used by the
+Bruker converter — as a real dependency.
 
+## Configuring JASON's External Tools
 
-## Running the program for the first time
+Point JASON's **Program** field at the installed console script's fixed
+path, e.g.:
 
-The server side program checks if the user is registered each time it runs and so since this will be the first time you have run it you have to give an email address. We don't save much on the server side, just an email address and the id of the computer and count the number of times the user runs the program.
+```
+/path/to/your/conda/env/bin/simplenmr-jeol
+```
 
-Once the user has registered and accepted the terms the user has to run the program again and everything should work. I haven't checked this from this program as I am already registered! Hopefully it will work!
+Leave **Arguments** empty — the script finds its input automatically
+(JASON drops `input.jjh5` in the run folder it creates and sets that as
+the working directory; `find_input_jjh5()` picks it up from there).
 
-## Notes
+This replaces the previous setup, which pointed JASON's Program field
+directly at the raw Python interpreter with a hardcoded path to
+`simpleNMRjeolTools_v8.py` as an argument — that path broke every time
+the source moved. The console script's path is stable across code
+changes; only a `pip install -e .` reinstall (needed if the package's
+own dependencies change) would move it.
 
-- I have only tested the program on two examples and found some problems, I think i have sorted them out, but you never know.
-- One of the problems I found was the creation of the molecule by extracting the information from the h5 file. It worked for the first molecule, but not the second, now it works for both, but who knows if it works for every molecule.
-- The other problem I found when running the program on the second example was due to an indexing problem, hopefully I have fixed that for other examples too.
+## Structure
+
+```
+src/simplenmrjeol/
+    __init__.py             # exports jeolData
+    __main__.py             # enables `python -m simplenmrjeol`
+    json_converter.py       # jeolData class: reads .jjh5, builds the JSON
+                             #   payload (mirrors simpleNMRbrukerTools'
+                             #   core/json_converter.py naming/role)
+    jason_simpleNMR_cli.py  # the runnable program: commandline()/main(),
+                             #   JASON environment quirks, dialog flow,
+                             #   server submission, opening the viewer
+tests/
+    test_builder_integration.py
+```
+
+`archive/` holds everything from before this repo was turned into a
+proper installable package — see `archive/README.md` for what's there
+and why it wasn't just deleted.
+
+## Development
+
+```bash
+pip install -e ".[test]"
+pytest
+```

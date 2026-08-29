@@ -1,0 +1,86 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "simpleNMRjeolTools"
+version = "1.0.0"
+description = "Calls simpleNMR from JEOL Jason"
+authors = [{name = "Eric Hughes", email = "erichughesabc@gmail.com"}]
+license = "MIT"  # Fixed: using simple string instead of table
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+dependencies = [
+    "numpy>=1.20.0",
+    "pandas>=1.5.0",
+    "pathlib-mate>=1.0.0",
+    "requests>=2.25.0"
+]
+
+[project.optional-dependencies]
+chemistry = ["rdkit>=2022.9.1"]
+gui = ["guidata>=2.0.0"]
+test = [
+    "pytest>=7.0.0",
+    "pytest-cov>=4.0.0",
+    "pytest-mock>=3.0.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/jeol-nmr-converter"
+Repository = "https://github.com/yourusername/jeol-nmr-converter.git"
+Issues = "https://github.com/yourusername/jeol-nmr-converter/issues"
+
+# Package discovery for src-layout with simpleNMRjeolTools package
+[tool.setuptools.packages.find]
+where = ["src"]
+include = ["simpleNMRjeolTools*"]
+
+[tool.setuptools.package-dir]
+"" = "src"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = ["test_*.py"]
+python_classes = ["Test*"]
+python_functions = ["test_*"]
+addopts = [
+    "--cov=src",
+    "--cov-report=html",
+    "--cov-report=term-missing",
+    "--verbose"
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py38']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+  # directories
+  \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line-length = 88
