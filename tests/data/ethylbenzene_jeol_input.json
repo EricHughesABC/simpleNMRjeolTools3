@@ -1,0 +1,632 @@
+{
+    "smiles": {
+        "datatype": "string",
+        "count": 1,
+        "data": {
+            "0": "CCc1ccccc1"
+        }
+    },
+    "molfile": {
+        "datatype": "string",
+        "count": 1,
+        "data": {
+            "0": "\n     RDKit          2D\n\n  8  8  0  0  0  0  0  0  0  0999 V2000\n    2.4249    0.7000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    2.4249    2.1000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.2124    2.8000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000    2.1000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    0.0000    0.7000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    1.2124    0.0000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    3.6373    2.8000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n    4.8497    2.1000    0.0000 C   0  0  0  0  0  0  0  0  0  0  0  0\n  1  2  1  0\n  1  6  2  0\n  2  3  2  0\n  2  7  1  0\n  3  4  1  0\n  4  5  2  0\n  5  6  1  0\n  7  8  1  0\nM  END"
+        }
+    },
+    "hostname": {
+        "datatype": "string",
+        "count": 1,
+        "data": {
+            "0": "0x624bb2cbbfd0"
+        }
+    },
+    "MNOVAcalcMethod": {
+        "datatype": "string",
+        "count": 1,
+        "data": {
+            "0": "JEOL Predict"
+        }
+    },
+    "carbonCalcPositionsMethod": {
+        "datatype": "string",
+        "count": 1,
+        "data": {
+            "0": "Calculated Positions"
+        }
+    },
+    "simulatedAnnealing": {
+        "datatype": "bool",
+        "count": 1,
+        "data": {
+            "0": true
+        }
+    },
+    "ml_consent": {
+        "datatype": "bool",
+        "count": 1,
+        "data": {
+            "0": false
+        }
+    },
+    "workingDirectory": {
+        "datatype": "string",
+        "count": 1,
+        "data": {
+            "0": "/Users/vsmw51/Documents/JASON/External Tools/simpleNMRverify/2026-10-07T12-02-28.898_2167"
+        }
+    },
+    "workingFilename": {
+        "datatype": "string",
+        "count": 1,
+        "data": {
+            "0": "input"
+        }
+    },
+    "allAtomsInfo": {
+        "datatype": "dataframe",
+        "count": 8,
+        "data": {
+            "0": {
+                "atom_idx": 0,
+                "id": 0,
+                "atomNumber": 1,
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "1": {
+                "atom_idx": 1,
+                "id": 1,
+                "atomNumber": 2,
+                "symbol": "C",
+                "numProtons": 0
+            },
+            "2": {
+                "atom_idx": 2,
+                "id": 2,
+                "atomNumber": 3,
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "3": {
+                "atom_idx": 3,
+                "id": 3,
+                "atomNumber": 4,
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "4": {
+                "atom_idx": 4,
+                "id": 4,
+                "atomNumber": 5,
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "5": {
+                "atom_idx": 5,
+                "id": 5,
+                "atomNumber": 6,
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "6": {
+                "atom_idx": 6,
+                "id": 6,
+                "atomNumber": 7,
+                "symbol": "C",
+                "numProtons": 2
+            },
+            "7": {
+                "atom_idx": 7,
+                "id": 7,
+                "atomNumber": 8,
+                "symbol": "C",
+                "numProtons": 3
+            }
+        }
+    },
+    "carbonAtomsInfo": {
+        "datatype": "dataframe",
+        "count": 8,
+        "data": {
+            "0": {
+                "atom_idx": 0,
+                "id": 0,
+                "atomNumber": 1,
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "1": {
+                "atom_idx": 1,
+                "id": 1,
+                "atomNumber": 2,
+                "symbol": "C",
+                "numProtons": 0
+            },
+            "2": {
+                "atom_idx": 2,
+                "id": 2,
+                "atomNumber": 3,
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "3": {
+                "atom_idx": 3,
+                "id": 3,
+                "atomNumber": 4,
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "4": {
+                "atom_idx": 4,
+                "id": 4,
+                "atomNumber": 5,
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "5": {
+                "atom_idx": 5,
+                "id": 5,
+                "atomNumber": 6,
+                "symbol": "C",
+                "numProtons": 1
+            },
+            "6": {
+                "atom_idx": 6,
+                "id": 6,
+                "atomNumber": 7,
+                "symbol": "C",
+                "numProtons": 2
+            },
+            "7": {
+                "atom_idx": 7,
+                "id": 7,
+                "atomNumber": 8,
+                "symbol": "C",
+                "numProtons": 3
+            }
+        }
+    },
+    "c13predictions": {
+        "datatype": "c13predictions",
+        "count": 8,
+        "data": {
+            "0": {
+                "atom_idx": 0,
+                "atomNumber": 1,
+                "numProtons": 1,
+                "ppm": 127.73333740234375
+            },
+            "1": {
+                "atom_idx": 1,
+                "atomNumber": 2,
+                "numProtons": 0,
+                "ppm": 143.96665954589844
+            },
+            "2": {
+                "atom_idx": 2,
+                "atomNumber": 3,
+                "numProtons": 1,
+                "ppm": 127.73333740234375
+            },
+            "3": {
+                "atom_idx": 3,
+                "atomNumber": 4,
+                "numProtons": 1,
+                "ppm": 128.26666259765625
+            },
+            "4": {
+                "atom_idx": 4,
+                "atomNumber": 5,
+                "numProtons": 1,
+                "ppm": 125.5999984741211
+            },
+            "5": {
+                "atom_idx": 5,
+                "atomNumber": 6,
+                "numProtons": 1,
+                "ppm": 128.26666259765625
+            },
+            "6": {
+                "atom_idx": 6,
+                "atomNumber": 7,
+                "numProtons": 2,
+                "ppm": 29.400001525878906
+            },
+            "7": {
+                "atom_idx": 7,
+                "atomNumber": 8,
+                "numProtons": 3,
+                "ppm": 15.700000762939453
+            }
+        }
+    },
+    "chosenSpectra": {
+        "datatype": "chosenSpectra",
+        "count": 4,
+        "data": {
+            "0": "13C udeft 14 1 C13_1D",
+            "1": "[1H, 1H] cosygpppqf_ptype.jaa 12 2 COSY",
+            "2": "[1H, 13C] hmbcetgpl3nd.ptg 1 4 HMBC",
+            "3": "[1H, 13C] hsqcedetgpsisp2.3.ptg 1 6 HSQC"
+        }
+    },
+    "spectraWithPeaks": {
+        "datatype": "spectraWithPeaks",
+        "count": 4,
+        "data": {
+            "0": "13C udeft 14 1",
+            "1": "[1H, 1H] cosygpppqf_ptype.jaa 12 2",
+            "2": "[1H, 13C] hmbcetgpl3nd.ptg 1 4",
+            "3": "[1H, 13C] hsqcedetgpsisp2.3.ptg 1 6"
+        }
+    },
+    "C13_1D_0": {
+        "datatype": "nmrspectrum",
+        "pulsesequence": "udeft",
+        "experimenttype": "Unknown",
+        "datafilename": "/Users/vsmw51/Library/CloudStorage/OneDrive-DurhamUniversity/projects/programming/2025/python/awh/simpleNMRexampleData/NMS_vsmw51_10092432_EthylBenzene/14",
+        "solvent": "CDCl3",
+        "expt_fn": "14",
+        "jason_spectrum_id": "{9d75726f-f779-4202-b675-7122f7fac139}",
+        "jason_nmrdata_index": "1",
+        "specfrequency": [
+            175.967357925
+        ],
+        "type": "1D",
+        "temperature": 24.950531758088005,
+        "nucleus": "13C",
+        "peaks": {
+            "data": {
+                "0": {
+                    "intensity": 6052500.03125,
+                    "delta2": 0.0,
+                    "delta1": 144.30538514471007,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{db5d5e8d-a444-4c9f-8652-052226a52d1a}"
+                },
+                "1": {
+                    "intensity": 25852271.0,
+                    "delta2": 0.0,
+                    "delta1": 128.38363386954984,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{e0ce5f38-c916-452d-ac68-55a58caf9cc6}"
+                },
+                "2": {
+                    "intensity": 26290286.75,
+                    "delta2": 0.0,
+                    "delta1": 127.92920614796854,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{981e8a05-cc8d-479a-a660-57d1de40ed90}"
+                },
+                "3": {
+                    "intensity": 13723140.0,
+                    "delta2": 0.0,
+                    "delta1": 125.6658256041507,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{7dd23078-a81f-4aca-a9e8-ceef2c501e24}"
+                },
+                "4": {
+                    "intensity": 14415592.5,
+                    "delta2": 0.0,
+                    "delta1": 28.989673116401097,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{60d8daa1-0725-4220-9bc5-0ed42dc2e803}"
+                },
+                "5": {
+                    "intensity": 16537346.0,
+                    "delta2": 0.0,
+                    "delta1": 15.7154900337371,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{84fce28e-910a-4c13-bf36-b2839f6ad45a}"
+                }
+            },
+            "count": 6,
+            "datatype": "peaks"
+        },
+        "integrals": {
+            "data": {},
+            "count": 0,
+            "normValue": 1,
+            "datatype": "integrals"
+        },
+        "multiplets": {
+            "data": {},
+            "count": 0,
+            "normValue": 1,
+            "datatype": "multiplets"
+        }
+    },
+    "COSY_0": {
+        "datatype": "nmrspectrum",
+        "pulsesequence": "cosygpppqf_ptype.jaa",
+        "experimenttype": "COSY",
+        "datafilename": "/Users/vsmw51/Library/CloudStorage/OneDrive-DurhamUniversity/projects/programming/2025/python/awh/simpleNMRexampleData/NMS_vsmw51_10092432_EthylBenzene/12",
+        "solvent": "CDCl3",
+        "expt_fn": "12",
+        "jason_spectrum_id": "{e2f3c187-881c-490e-85bd-92a4458dd394}",
+        "jason_nmrdata_index": "2",
+        "specfrequency": [
+            699.743105544428,
+            699.743105544428
+        ],
+        "type": "2D",
+        "temperature": 24.947977502388028,
+        "nucleus": [
+            "1H",
+            "1H"
+        ],
+        "peaks": {
+            "data": {
+                "0": {
+                    "intensity": 9989519902.146164,
+                    "delta2": 7.405066013740169,
+                    "delta1": 7.326341267162638,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{0ce9e917-3c5f-4d11-8297-93b930ab33fd}"
+                },
+                "1": {
+                    "intensity": 1778664638.2915194,
+                    "delta2": 7.404718007004178,
+                    "delta1": 7.296639631410522,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{e48c637d-1420-4c76-941c-39c6c30dd5a8}"
+                },
+                "2": {
+                    "intensity": 340716110.29080814,
+                    "delta2": 2.7758786101119886,
+                    "delta1": 1.368364164820258,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{c722cbc6-e190-4a44-b790-757bcb2691ab}"
+                }
+            },
+            "count": 3,
+            "datatype": "peaks"
+        },
+        "integrals": {
+            "data": {},
+            "count": 0,
+            "normValue": 1,
+            "datatype": "integrals"
+        },
+        "multiplets": {
+            "data": {},
+            "count": 0,
+            "normValue": 1,
+            "datatype": "multiplets"
+        }
+    },
+    "HMBC_0": {
+        "datatype": "nmrspectrum",
+        "pulsesequence": "hmbcetgpl3nd.ptg",
+        "experimenttype": "HMBC",
+        "datafilename": "/Users/vsmw51/Library/CloudStorage/OneDrive-DurhamUniversity/projects/programming/2025/python/awh/simpleNMRexampleData/NMS_vsmw51_10092432_EthylBenzene/16/pdata/1",
+        "solvent": "",
+        "expt_fn": "1",
+        "jason_spectrum_id": "{658f12bc-2b11-44b5-8b41-318464b3c3f9}",
+        "jason_nmrdata_index": "4",
+        "specfrequency": [
+            699.74,
+            175.949762948
+        ],
+        "type": "2D",
+        "temperature": null,
+        "nucleus": [
+            "1H",
+            "13C"
+        ],
+        "peaks": {
+            "data": {
+                "0": {
+                    "intensity": 90972072.0,
+                    "delta2": 7.40387572911824,
+                    "delta1": 144.40056052105217,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{1774e688-a307-4f0c-92ad-b60b6da1c87b}"
+                },
+                "1": {
+                    "intensity": 80295472.0,
+                    "delta2": 7.295504884348891,
+                    "delta1": 127.95459479216626,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{00a416e8-712d-48b2-b645-73536f816579}"
+                },
+                "2": {
+                    "intensity": 101794270.0,
+                    "delta2": 2.7752397096250174,
+                    "delta1": 127.92086293505797,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{82292e56-7132-4af1-a2df-269c3383b84b}"
+                },
+                "3": {
+                    "intensity": 132025581.0,
+                    "delta2": 2.774821613095857,
+                    "delta1": 144.39401421748752,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{9cb4a1c8-fb58-4864-a418-a446a0803e6e}"
+                },
+                "4": {
+                    "intensity": 401260969.0,
+                    "delta2": 1.3680744114705792,
+                    "delta1": 28.966662434403457,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{17aa3cdf-e8f8-478b-b07c-124e637c561c}"
+                },
+                "5": {
+                    "intensity": 356756434.0,
+                    "delta2": 1.3679846209650677,
+                    "delta1": 144.40023806705256,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{bb84d936-9adf-44bd-8c46-ebd0a7aad069}"
+                }
+            },
+            "count": 6,
+            "datatype": "peaks"
+        },
+        "integrals": {
+            "data": {},
+            "count": 0,
+            "normValue": 1,
+            "datatype": "integrals"
+        },
+        "multiplets": {
+            "data": {},
+            "count": 0,
+            "normValue": 1,
+            "datatype": "multiplets"
+        }
+    },
+    "HSQC_0": {
+        "datatype": "nmrspectrum",
+        "pulsesequence": "hsqcedetgpsisp2.3.ptg",
+        "experimenttype": "HSQC",
+        "datafilename": "/Users/vsmw51/Library/CloudStorage/OneDrive-DurhamUniversity/projects/programming/2025/python/awh/simpleNMRexampleData/NMS_vsmw51_10092432_EthylBenzene/15/pdata/1",
+        "solvent": "",
+        "expt_fn": "1",
+        "jason_spectrum_id": "{1dfca354-0f19-4218-b9db-179801aaeb10}",
+        "jason_nmrdata_index": "6",
+        "specfrequency": [
+            699.74,
+            175.949762948
+        ],
+        "type": "2D",
+        "temperature": null,
+        "nucleus": [
+            "1H",
+            "13C"
+        ],
+        "peaks": {
+            "data": {
+                "0": {
+                    "intensity": 234975121.0,
+                    "delta2": 7.401191415389854,
+                    "delta1": 128.4055089538823,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{fc3bd16a-e67c-47d6-bc1d-73daf2d26bc1}"
+                },
+                "1": {
+                    "intensity": 203595289.0,
+                    "delta2": 7.322637235199043,
+                    "delta1": 127.92693501134798,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{b02fad61-a90c-43ae-9115-ebbc664d9306}"
+                },
+                "2": {
+                    "intensity": 124474714.0,
+                    "delta2": 7.295605355545145,
+                    "delta1": 125.67889688654856,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{f80dacb4-d950-47eb-8ad9-7a8b46596427}"
+                },
+                "3": {
+                    "intensity": -122371545.0,
+                    "delta2": 2.7774500642082858,
+                    "delta1": 29.022750846532787,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{bfb0db5f-1680-4585-aa52-955107815816}"
+                },
+                "4": {
+                    "intensity": 208303881.0,
+                    "delta2": 1.3675760641706804,
+                    "delta1": 15.747160202679005,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{49dad087-f74e-45da-ada3-1bd45abb1bbc}"
+                }
+            },
+            "count": 5,
+            "datatype": "peaks"
+        },
+        "integrals": {
+            "data": {
+                "0": {
+                    "intensity": 1206753321.0,
+                    "rangeMin1": 7.388253079829015,
+                    "rangeMax1": 7.4118193338862595,
+                    "rangeMin2": 128.26067736601007,
+                    "rangeMax2": 128.55034054175454,
+                    "delta1": 7.400036206857637,
+                    "delta2": 128.4055089538823,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{acbe2c69-58b9-4bf0-bfeb-050d538ea171}"
+                },
+                "1": {
+                    "intensity": 1500581033.0,
+                    "rangeMin1": 7.311085149876865,
+                    "rangeMax1": 7.331416820043898,
+                    "rangeMin2": 127.77580639791609,
+                    "rangeMax2": 128.10325172701852,
+                    "delta1": 7.321250984960381,
+                    "delta2": 127.9395290624673,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{bb4861a6-78c2-48fa-930f-913298c250d2}"
+                },
+                "2": {
+                    "intensity": 0.0,
+                    "rangeMin1": 7.281973894864977,
+                    "rangeMax1": 7.307850565986656,
+                    "rangeMin2": 125.55295637535532,
+                    "rangeMax2": 125.79224334662248,
+                    "delta1": 7.294912230425816,
+                    "delta2": 125.6725998609889,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{9afcb99b-a405-4c22-8cd2-a009c8b720a1}"
+                },
+                "3": {
+                    "intensity": -864972442.0,
+                    "rangeMin1": 2.7610954847580738,
+                    "rangeMax1": 2.786256376219939,
+                    "rangeMin2": 28.92090292637715,
+                    "rangeMax2": 29.19734728108532,
+                    "delta1": 2.7736759304890066,
+                    "delta2": 29.059125103731233,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{23c65e02-8b2e-4fba-b64e-07d13d4e7a0a}"
+                },
+                "4": {
+                    "intensity": 2167555377.0,
+                    "rangeMin1": 1.348115687180645,
+                    "rangeMax1": 1.3829084824052538,
+                    "rangeMin2": 15.576318530159885,
+                    "rangeMax2": 15.904860208081283,
+                    "delta1": 1.3655120847929494,
+                    "delta2": 15.740589369120585,
+                    "annotation": "",
+                    "type": 0,
+                    "jason_id": "{a70e7b87-3667-4ff8-9ff6-8f3f42ab1e5f}"
+                }
+            },
+            "count": 5,
+            "normValue": 1,
+            "datatype": "integrals"
+        },
+        "multiplets": {
+            "data": {},
+            "count": 0,
+            "normValue": 1,
+            "datatype": "multiplets"
+        }
+    }
+}

@@ -35,6 +35,7 @@ os.environ.setdefault("CONDA_PREFIX", str(Path(sys.executable).parent.parent))
 
 from typing import Optional
 import json
+import time
 from datetime import datetime
 import fire
 
@@ -49,6 +50,13 @@ from qtpy.QtWidgets import QApplication, QMessageBox, QFileDialog
 # ImportError from either surfaces here with the same clear message).
 try:
     from .json_converter import jeolData
+    from .assignment_writer import (
+        AtomMismatchError,
+        find_export,
+        load_export,
+        preview_assignments,
+        write_assignments,
+    )
     from simplenmr_builder import ContractError
     from simplenmr_builder.gui.submission import (
         SubmissionOutcome,
@@ -58,9 +66,12 @@ try:
     )
 except ImportError as e:
     print(
-        "ERROR: simplenmr_builder[gui,viewer] is not installed in this "
-        "environment. Install it with:\n"
+        "ERROR: a required package is not installed in this environment.\n"
+        "simplenmr_builder[gui,viewer]:\n"
         '    pip install -e "<path-to-simpleNMRbuilder>[gui,viewer]"\n'
+        "beautifuljason >= 1.3.0b1 (needed to write assignments back to JASON):\n"
+        "    pip install lxml\n"
+        "    pip install -i https://test.pypi.org/simple/ beautifuljason==1.3.0b1\n"
         f"\nUnderlying import error: {e}"
     )
     sys.exit(1)
@@ -125,7 +136,13 @@ def find_input_jjh5() -> Path | None:
     return None
 
 
-def commandline(fn=None):
+# simpleNMR server used unless --server is given. Alternatives:
+#   local development server:  http://127.0.0.1:5000   (python run.py in simpleNMRtools)
+#   production server:         https://simplenmr.pythonanywhere.com
+DEFAULT_SERVER = "https://test-simplenmr.pythonanywhere.com"
+
+
+def commandline(fn=None, backup=False, server=DEFAULT_SERVER):
     """
     Handle command line arguments for JEOL NMR file processing
 
@@ -136,8 +153,27 @@ def commandline(fn=None):
         3. A file picker dialog, as a last resort.
 
     Args:
-        fn: Path to a JEOL .jjh5 NMR file (optional)
+        fn: Path to a JEOL .jjh5 NMR file (optional). JASON passes its
+            <input> placeholder here.
+        backup: If True, copy the .jjh5 to <stem>.<timestamp>.bak.jjh5
+            before assignments are written into it (--backup).
+        server: Base address of the simpleNMR server (--server), e.g.
+            http://127.0.0.1:5000 for a local development server.
+            Defaults to DEFAULT_SERVER.
+
+    Returns:
+        (Path, bool, str): the resolved .jjh5 path, the backup flag and
+        the server address (without a trailing slash).
     """
+    server = str(server).strip().rstrip("/")
+    if not server.startswith(("http://", "https://")):
+        show_info_message(
+            "Invalid Server Address",
+            f"--server must start with http:// or https:// (got {server!r}).",
+            QMessageBox.Critical,
+        )
+        sys.exit(1)
+
     # Ensure we have a Qt application context
     # Convert to Path object if provided
     if fn:
@@ -176,7 +212,7 @@ def commandline(fn=None):
             )
             sys.exit(1)
 
-    return fn
+    return fn, bool(backup), server
 
 def log_launch_diagnostics(launch_note: str = "") -> Optional[Path]:
     """Append process-launch environment details to a fixed diagnostics log.
@@ -248,6 +284,72 @@ def log_launch_diagnostics(launch_note: str = "") -> Optional[Path]:
         return None
 
 
+def write_back_assignments(jeol_fn: Path, html_path: Path, since: float, backup: bool) -> int:
+    """Write the assignments exported from the viewer into jeol_fn, in place.
+
+    Runs after the viewer subprocess has closed. JASON's External Tool is
+    configured with Output Mode "Modify the input file" and "Replace the
+    current document", so whatever is in jeol_fn when this process exits
+    is reloaded into JASON.
+
+    Returns the process exit code: 0 if the file was written or
+    deliberately left unchanged (no export, or the user declined), 1 if
+    something went wrong.
+    """
+    export_path = find_export(Path(html_path).parent, since)
+    if export_path is None:
+        print("No export from the viewer - JASON document left unchanged.")
+        return 0
+
+    print(f"Using simpleNMR export: {export_path}")
+    try:
+        snmr = load_export(export_path)
+        preview = preview_assignments(jeol_fn, snmr)
+    except AtomMismatchError as e:
+        print(f"ERROR: {e}")
+        show_info_message("Assignments Not Written", str(e), QMessageBox.Critical)
+        return 1
+    except Exception as e:
+        print(f"ERROR preparing assignments: {e!r}")
+        show_info_message(
+            "Assignments Not Written",
+            f"The assignments could not be prepared:\n\n{e}\n\nThe JASON document was not changed.",
+            QMessageBox.Critical,
+        )
+        return 1
+
+    print(preview.summary_text())
+    if preview.n_assignments == 0:
+        show_info_message("Nothing to Write", preview.summary_text(), QMessageBox.Warning)
+        return 0
+
+    reply = QMessageBox.question(
+        None,
+        "Write Assignments to JASON?",
+        preview.summary_text() + "\n\nWrite these assignments to the JASON document?",
+        QMessageBox.Yes | QMessageBox.No,
+        QMessageBox.Yes,
+    )
+    if reply != QMessageBox.Yes:
+        print("User declined - JASON document left unchanged.")
+        return 0
+
+    try:
+        result = write_assignments(jeol_fn, snmr, backup=backup)
+    except Exception as e:
+        print(f"ERROR writing assignments: {e!r}")
+        show_info_message(
+            "Assignments Not Written",
+            f"Writing the assignments failed:\n\n{e}\n\n"
+            "The document JASON reloads may be incomplete.",
+            QMessageBox.Critical,
+        )
+        return 1
+
+    print(f"Wrote {result.n_assignments} assignments to {jeol_fn}")
+    return 0
+
+
 def main() -> int:
     """
     Entry point installed as the `simplenmr-jeol` console script (see
@@ -259,10 +361,6 @@ def main() -> int:
 
     log_launch_diagnostics()
 
-    # local_remote = "http://127.0.0.1:5000"
-    local_remote = "https://test-simplenmr.pythonanywhere.com"
-    # local_remote = "https://simplenmr.pythonanywhere.com"
-
     # At the start of your main program
     # Return value intentionally unused — this call's only job is to
     # ensure a QApplication instance exists in this process before any
@@ -272,13 +370,14 @@ def main() -> int:
     # .exec() on this app directly.
     init_qt_app()
 
+    # --server picks the simpleNMR server (default DEFAULT_SERVER)
+    jeol_fn, backup, local_remote = fire.Fire(commandline)
+
     print("SERVER ADDRESS:", local_remote)
 
     ml_address = f"{local_remote}/check_machine_learning"
 
     simpleNMR_address = f"{local_remote}/simpleMNOVA"
-
-    jeol_fn = fire.Fire(commandline)
 
     # check if file exists
     if not jeol_fn.exists():
@@ -370,8 +469,14 @@ def main() -> int:
             # hang. Confirmed 2026-08-27 fixing the equivalent issue for
             # the Bruker converter; applied here for consistency even
             # though it hadn't been separately reported for JEOL yet.
+            viewer_started = time.time()
             open_result_viewer_subprocess(submission, wait=True)
-            sys.exit(0)
+            # The viewer has closed. Write any exported assignments into
+            # the .jjh5 before exiting, because JASON reloads the file as
+            # soon as this process ends. The export only exists on disk
+            # (the viewer is a separate process), so it is picked up from
+            # the html folder; the timestamp check ignores older exports.
+            sys.exit(write_back_assignments(jeol_fn, submission.html_path, viewer_started, backup))
         elif submission.outcome == SubmissionOutcome.DIAGNOSTIC_HTML:
             print(
                 f"Server returned a diagnostic report (status {submission.status_code}). "

@@ -1,0 +1,418 @@
+{
+ "nodes_now": [
+  {
+   "ppm_calculated": 124.4000015258789,
+   "id": 1,
+   "atomNumber": 2,
+   "numProtons": 0,
+   "x": 0.7213206526638422,
+   "y": 0.3389930586856577,
+   "sym_atom_idx": "",
+   "sym_atomNumber": "",
+   "ppm": 123.92881210710738,
+   "jCouplingVals": "",
+   "jCouplingClass": "",
+   "visible": "false",
+   "symbol": "C",
+   "iupacLabel": "",
+   "H1_ppm": []
+  },
+  {
+   "ppm_calculated": 125.9000015258789,
+   "id": 4,
+   "atomNumber": 5,
+   "numProtons": 0,
+   "x": 0.5737735508879473,
+   "y": 0.48097448841611834,
+   "sym_atom_idx": "",
+   "sym_atomNumber": "",
+   "ppm": 126.69294072730332,
+   "jCouplingVals": "",
+   "jCouplingClass": "",
+   "visible": "false",
+   "symbol": "C",
+   "iupacLabel": "",
+   "H1_ppm": []
+  },
+  {
+   "ppm_calculated": 127.5,
+   "id": 5,
+   "atomNumber": 6,
+   "numProtons": 1,
+   "x": 0.4262264491120526,
+   "y": 0.3389930586856577,
+   "sym_atom_idx": "10",
+   "sym_atomNumber": "11",
+   "ppm": -1000000.0,
+   "jCouplingVals": "",
+   "jCouplingClass": "",
+   "visible": "false",
+   "symbol": "C",
+   "iupacLabel": "",
+   "H1_ppm": []
+  },
+  {
+   "ppm_calculated": 116.20000457763672,
+   "id": 6,
+   "atomNumber": 7,
+   "numProtons": 1,
+   "x": 0.2786671774993238,
+   "y": 0.48097448841611834,
+   "sym_atom_idx": "9",
+   "sym_atomNumber": "10",
+   "ppm": -1000000.0,
+   "jCouplingVals": "",
+   "jCouplingClass": "",
+   "visible": "false",
+   "symbol": "C",
+   "iupacLabel": "",
+   "H1_ppm": []
+  },
+  {
+   "ppm_calculated": 165.0,
+   "id": 7,
+   "atomNumber": 8,
+   "numProtons": 0,
+   "x": 0.2786671774993238,
+   "y": 0.7649373478770396,
+   "sym_atom_idx": "",
+   "sym_atomNumber": "",
+   "ppm": 164.68497779664062,
+   "jCouplingVals": "",
+   "jCouplingClass": "",
+   "visible": "false",
+   "symbol": "C",
+   "iupacLabel": "",
+   "H1_ppm": []
+  },
+  {
+   "ppm_calculated": 116.20000457763672,
+   "id": 9,
+   "atomNumber": 10,
+   "numProtons": 1,
+   "x": 0.4262264491120526,
+   "y": 0.9069187776075004,
+   "sym_atom_idx": "6",
+   "sym_atomNumber": "7",
+   "ppm": 115.94228847997077,
+   "jCouplingVals": "",
+   "jCouplingClass": "",
+   "visible": "false",
+   "symbol": "C",
+   "iupacLabel": "",
+   "H1_ppm": [
+    7.190709770986014
+   ]
+  },
+  {
+   "ppm_calculated": 127.5,
+   "id": 10,
+   "atomNumber": 11,
+   "numProtons": 1,
+   "x": 0.5737735508879473,
+   "y": 0.7649373478770396,
+   "sym_atom_idx": "5",
+   "sym_atomNumber": "6",
+   "ppm": 127.62250540900479,
+   "jCouplingVals": "",
+   "jCouplingClass": "",
+   "visible": "false",
+   "symbol": "C",
+   "iupacLabel": "",
+   "H1_ppm": [
+    7.653449539091436
+   ]
+  }
+ ],
+ "molgraph": {
+  "nodes": [
+   {
+    "id": 0,
+    "atom_number": 9
+   },
+   {
+    "id": 1,
+    "atom_number": 6
+   },
+   {
+    "id": 2,
+    "atom_number": 9
+   },
+   {
+    "id": 3,
+    "atom_number": 9
+   },
+   {
+    "id": 4,
+    "atom_number": 6
+   },
+   {
+    "id": 5,
+    "atom_number": 6
+   },
+   {
+    "id": 6,
+    "atom_number": 6
+   },
+   {
+    "id": 7,
+    "atom_number": 6
+   },
+   {
+    "id": 8,
+    "atom_number": 9
+   },
+   {
+    "id": 9,
+    "atom_number": 6
+   },
+   {
+    "id": 10,
+    "atom_number": 6
+   }
+  ],
+  "links": [
+   {
+    "source": 0,
+    "target": 1
+   },
+   {
+    "source": 1,
+    "target": 2
+   },
+   {
+    "source": 1,
+    "target": 3
+   },
+   {
+    "source": 1,
+    "target": 4
+   },
+   {
+    "source": 4,
+    "target": 5
+   },
+   {
+    "source": 4,
+    "target": 10
+   },
+   {
+    "source": 5,
+    "target": 6
+   },
+   {
+    "source": 6,
+    "target": 7
+   },
+   {
+    "source": 7,
+    "target": 8
+   },
+   {
+    "source": 7,
+    "target": 9
+   },
+   {
+    "source": 9,
+    "target": 10
+   }
+  ]
+ },
+ "oldjsondata": {
+  "HSQC_0": {
+   "datatype": "nmrspectrum",
+   "pulsesequence": "hsqcedetgpsp.3.ptg",
+   "experimenttype": "HSQC",
+   "datafilename": "/Users/vsmw51/Library/CloudStorage/OneDrive-DurhamUniversity/projects/programming/2025/python/awh/simpleNMRexampleData/NMS_vsmw51_10085637_P62607_F-C6H4-CF3/15/pdata/1",
+   "solvent": "",
+   "expt_fn": "1",
+   "specfrequency": [
+    598.91,
+    150.596039282
+   ],
+   "type": "2D",
+   "temperature": null,
+   "nucleus": [
+    "1H",
+    "13C"
+   ],
+   "peaks": {
+    "data": {
+     "0": {
+      "intensity": 269584097.0,
+      "delta2": 7.653449539091436,
+      "delta1": 127.62250540900479,
+      "annotation": "",
+      "type": 0
+     },
+     "1": {
+      "intensity": 245749214.0,
+      "delta2": 7.190709770986014,
+      "delta1": 115.94228847997077,
+      "annotation": "",
+      "type": 0
+     }
+    },
+    "count": 2,
+    "datatype": "peaks"
+   },
+   "integrals": {
+    "data": {
+     "0": {
+      "intensity": 2844539288.0,
+      "rangeMin1": 7.177145278596737,
+      "rangeMax1": 7.205606490306377,
+      "rangeMin2": 115.6393753728751,
+      "rangeMax2": 116.18910656723392,
+      "delta1": 7.191375884451557,
+      "delta2": 115.91424097005451,
+      "annotation": "",
+      "type": 0
+     },
+     "1": {
+      "intensity": 3008421271.0,
+      "rangeMin1": 7.633412118619663,
+      "rangeMax1": 7.6699996066982665,
+      "rangeMin2": 127.41008817537951,
+      "rangeMax2": 127.84541357679619,
+      "delta1": 7.6517058626589645,
+      "delta2": 127.62775087608784,
+      "annotation": "",
+      "type": 0
+     }
+    },
+    "count": 2,
+    "normValue": 1,
+    "datatype": "integrals"
+   },
+   "multiplets": {
+    "data": {},
+    "count": 0,
+    "normValue": 1,
+    "datatype": "multiplets"
+   }
+  },
+  "HMBC_0": {
+   "datatype": "nmrspectrum",
+   "pulsesequence": "hmbcetgpl3nd.ptg",
+   "experimenttype": "HMBC",
+   "datafilename": "/Users/vsmw51/Library/CloudStorage/OneDrive-DurhamUniversity/projects/programming/2025/python/awh/simpleNMRexampleData/NMS_vsmw51_10085637_P62607_F-C6H4-CF3/16/pdata/1",
+   "solvent": "",
+   "expt_fn": "1",
+   "specfrequency": [
+    598.91,
+    150.596039282
+   ],
+   "type": "2D",
+   "temperature": null,
+   "nucleus": [
+    "1H",
+    "13C"
+   ],
+   "peaks": {
+    "data": {
+     "0": {
+      "intensity": 957761.0,
+      "delta2": 7.657346281954949,
+      "delta1": 164.68497779664062,
+      "annotation": "",
+      "type": 0
+     },
+     "1": {
+      "intensity": 332002049.0,
+      "delta2": 7.6570349781404845,
+      "delta1": 127.61635299003791,
+      "annotation": "",
+      "type": 0
+     },
+     "2": {
+      "intensity": 2044943.0,
+      "delta2": 7.656619355417415,
+      "delta1": 123.92881210710738,
+      "annotation": "",
+      "type": 0
+     },
+     "3": {
+      "intensity": 32914533.0,
+      "delta2": 7.192501812900389,
+      "delta1": 115.969091483937,
+      "annotation": "",
+      "type": 0
+     },
+     "4": {
+      "intensity": 111757193.0,
+      "delta2": 7.191701148390396,
+      "delta1": 126.69294072730332,
+      "annotation": "",
+      "type": 0
+     },
+     "5": {
+      "intensity": 490450.0,
+      "delta2": 7.190636056163103,
+      "delta1": 164.68497779664062,
+      "annotation": "",
+      "type": 0
+     }
+    },
+    "count": 6,
+    "datatype": "peaks"
+   },
+   "integrals": {
+    "data": {},
+    "count": 0,
+    "normValue": 1,
+    "datatype": "integrals"
+   },
+   "multiplets": {
+    "data": {},
+    "count": 0,
+    "normValue": 1,
+    "datatype": "multiplets"
+   }
+  },
+  "COSY_0": {
+   "datatype": "nmrspectrum",
+   "pulsesequence": "cosygpppqf_ptype.jaa",
+   "experimenttype": "COSY",
+   "datafilename": "/Users/vsmw51/Library/CloudStorage/OneDrive-DurhamUniversity/projects/programming/2025/python/awh/simpleNMRexampleData/NMS_vsmw51_10085637_P62607_F-C6H4-CF3/12/pdata/1",
+   "solvent": "",
+   "expt_fn": "1",
+   "specfrequency": [
+    598.91,
+    598.91
+   ],
+   "type": "2D",
+   "temperature": null,
+   "nucleus": [
+    "1H",
+    "1H"
+   ],
+   "peaks": {
+    "data": {
+     "0": {
+      "intensity": 157495669.0,
+      "delta2": 7.655045872136332,
+      "delta1": 7.192421734717209,
+      "annotation": "",
+      "type": 0
+     }
+    },
+    "count": 1,
+    "datatype": "peaks"
+   },
+   "integrals": {
+    "data": {},
+    "count": 0,
+    "normValue": 1,
+    "datatype": "integrals"
+   },
+   "multiplets": {
+    "data": {},
+    "count": 0,
+    "normValue": 1,
+    "datatype": "multiplets"
+   }
+  }
+ },
+ "_note": "Built from a real run (4-fluorobenzotrifluoride, 2026-10-01): nodes from the result HTML catoms (symmetric duplicates C6/C7 carry ppm -1e6), H1_ppm from the HSQC peaks, peaks from input_jeol_inputdata.json. No 1D 13C spectrum was used."
+}

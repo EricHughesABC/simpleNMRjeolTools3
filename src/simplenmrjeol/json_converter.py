@@ -169,6 +169,23 @@ def get_host_name() -> dict:
     return hostname
 
 
+def _jason_id(group) -> str | None:
+    """
+    The JEOL universal ID of an HDF5 group in a .jjh5 file (its "ID" attribute),
+    e.g. "{db5d5e8d-a444-4c9f-8652-052226a52d1a}", or None if it has none.
+
+    Spectra, peaks and multiplets/integrals all carry one. Carrying it through
+    simpleNMR lets assignments be written back to the exact JASON object
+    instead of being matched by ppm.
+    """
+    value = group.attrs.get("ID", None)
+    if value is None:
+        return None
+    if hasattr(value, "decode"):
+        value = value.decode()
+    return str(value)
+
+
 # function to find datasets with peaks
 def find_datasets_with_peaks(file_path: Path) -> list[str]:
     """
@@ -226,6 +243,8 @@ def get_spec_info(fn: Path, expt_id: str) -> dict:
             - type (str): Dimensionality of the experiment (e.g., '1D', '2D').
             - temperature (float or None): Temperature at which the experiment was performed.
             - nucleus (str or list): Nucleus or nuclei involved in the experiment.
+            - jason_spectrum_id (str or None): JEOL universal ID of the spectrum.
+            - jason_nmrdata_index (str): The spectrum's key under NMRData (e.g. "4").
 
     Notes:
         - Handles decoding of string attributes where necessary.
@@ -257,6 +276,12 @@ def get_spec_info(fn: Path, expt_id: str) -> dict:
 
             # add the filename alone not all the directory
             specInfo["expt_fn"] = Path(specInfo["datafilename"]).name
+
+            # JEOL identity of this spectrum: its universal ID and its NMRData index
+            specInfo["jason_spectrum_id"] = _jason_id(
+                fp[f"JasonDocument/NMR/NMRData/{expt_id}"]
+            )
+            specInfo["jason_nmrdata_index"] = str(expt_id)
 
             specInfo["specfrequency"] = [
                 sf
@@ -329,6 +354,7 @@ def get_peakinfo(filename: Path, expt_id: str, pk_id: str) -> dict:
             - "delta1": The second position value (float or None).
             - "annotation": An empty string (reserved for future use).
             - "type": An integer (default 0).
+            - "jason_id": The peak's JEOL universal ID (str or None).
         Returns an empty dictionary if the specified peak is not found.
     """
     peak_vals = {}
@@ -342,6 +368,7 @@ def get_peakinfo(filename: Path, expt_id: str, pk_id: str) -> dict:
             peak_vals["delta1"] = peak_group.attrs.get("Pos", None)[1]
             peak_vals["annotation"] = ""
             peak_vals["type"] = 0
+            peak_vals["jason_id"] = _jason_id(peak_group)
 
         return peak_vals
     except KeyError:
@@ -396,6 +423,7 @@ def get_integralinfo(filename: Path, expt_id: str, int_id: str) -> dict:
             - "delta2": Midpoint of the second spectrum range (float or None).
             - "annotation": Annotation string (always empty).
             - "type": Type indicator (always 0).
+            - "jason_id": The integral's (JASON multiplet's) JEOL universal ID (str or None).
         Returns an empty dictionary if the specified group is not found.
     """
     integral_vals = {}
@@ -431,6 +459,7 @@ def get_integralinfo(filename: Path, expt_id: str, int_id: str) -> dict:
             )
             integral_vals["annotation"] = ""
             integral_vals["type"] = 0
+            integral_vals["jason_id"] = _jason_id(integral_group)
             return integral_vals
     except KeyError:
         return {}
