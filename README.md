@@ -34,6 +34,26 @@ Create the tool with these settings:
 - **Output → After the Tool Finishes:** Replace the current document
 - **Command → Arguments** (one per line):
 
+### step 1
+<img width="521" height="470" alt="image" src="https://github.com/user-attachments/assets/62fd2c7c-e417-42e0-a352-9e45095be616" />
+
+### step 2
+<img width="522" height="472" alt="image" src="https://github.com/user-attachments/assets/40a80891-b0cf-40a7-879b-55a30b37192d" />
+
+### step 3
+<img width="525" height="467" alt="image" src="https://github.com/user-attachments/assets/b5c87618-9c56-4faa-9452-78077c09a727" />
+
+### step 4
+<img width="520" height="469" alt="image" src="https://github.com/user-attachments/assets/7bcbffcf-4080-4009-ba50-353ac047fadf" />
+
+### step 5
+<img width="521" height="563" alt="image" src="https://github.com/user-attachments/assets/873ccef5-cb8d-4a12-9fcc-8121e5b1fc24" />
+
+### Notes
+  - **in step 1**, set the path to your local installation of python. On Mac Os with Mx chipsets the python needs to be a native installation for the Mx processor.
+  - **in step 3**, if you do not want to run the local simpleNMR server then change the address from https://127.0.0.1:5000 to https://simplenmr.pythonanywhere.com/
+
+
   ```
   /path/to/your/conda/env/bin/simplenmr-jeol
   <input>
