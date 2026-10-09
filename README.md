@@ -3,9 +3,31 @@
 JEOL/JASON client for [simpleNMR](https://github.com/EricHughesABC/simpleNMRtools) —
 reads a `.jjh5` NMR file, lets the user assign spectrum types via a shared
 dialog, builds the JSON payload the simpleNMR server expects, submits it,
-and opens the result in a PyQt viewer.
+and opens the result in a PyQt viewer. The solution can be exported back to Jason and the assigned NMR information can be displayed on the molecule and spectra and interogated interactively.
 
-## Installing
+<img width="350" height="285" alt="image" src="https://github.com/user-attachments/assets/0248b714-0367-42b0-814c-10d6e7179382" />
+
+
+<img width="350" height="285" alt="image" src="https://github.com/user-attachments/assets/10069bd0-0faf-4d4e-bd5c-37b36283cb8d" />
+
+
+## Prerequisites for Installation.
+
+At the moment we have not created a pypy installation, but the different simpleNMR repos can be installed locally by downloading the github repos and using pip to install them where necessary
+
+### required simpleNMR github repos
+   - [simpleNMR](https://github.com/EricHughesABC/simpleNMRtools) -- required if running simpleNMR server locally
+   - https://github.com/EricHughesABC/simpleNMRuniversal  -- installed using pip
+   - https://github.com/EricHughesABC/simpleNMRbuilder.   -- installed using pip
+   - https://github.com/EricHughesABC/simpleNMRjeolTools3. -- installed using pip
+
+### Python version
+  - the simpleNMR tool set has been developed mainly using python 3.13, but it is installed on pythonanywhere using python 3.10
+  - The simpleNMRjeolTools if run on macos requires a M1-M5 native compatible python installation
+
+## Installing simpleNMRtoolsJeol3
+
+Download the github reopository then
 
 ```bash
 pip install lxml
